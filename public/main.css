@@ -34,3 +34,29 @@ nav .text-container {
 .navigation-primary, .navigation-secondary {
     display: inline-block;
 }
+
+.navigation-secondary a, .navigation-secondary div {
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height */
+
+    letter-spacing: 0.02em;
+
+    /* Black */
+
+    color: #151522;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+
+}
+
+.navigation-secondary button {
+    display: inline-block;
+    border: 1.5px solid #222222;
+    box-sizing: border-box;
+    padding: 5px 18px;
+}
