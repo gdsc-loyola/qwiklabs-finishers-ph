@@ -1,0 +1,28 @@
+/* FOR NAVBAR */
+nav img {
+    vertical-align: middle; 
+}
+
+nav .navigation-header {
+    display: inline-block;
+}
+
+nav a {
+    display: inline-block;
+    margin-right: auto;
+}
+nav span {
+    font-family: Circular Std;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18.5px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+nav .text-container {
+    width: 90%;
+    margin: 0 auto;
+}
