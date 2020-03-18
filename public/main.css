@@ -1,9 +1,10 @@
 /* FOR NAVBAR */
+
 nav img {
     vertical-align: middle; 
 }
 
-nav .navigation-header {
+nav .navigation-primary {
     display: inline-block;
 }
 
@@ -25,4 +26,11 @@ nav span {
 nav .text-container {
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navigation-primary, .navigation-secondary {
+    display: inline-block;
 }
