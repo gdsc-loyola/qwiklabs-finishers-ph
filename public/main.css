@@ -9,11 +9,13 @@ nav .navigation-primary {
 }
 
 nav a {
+    text-decoration: none;
     display: inline-block;
     margin-right: auto;
 }
+
 nav span {
-    font-family: Circular Std;
+    font-family: Circular Std, sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 18.5px;
@@ -36,7 +38,7 @@ nav .text-container {
 }
 
 .navigation-secondary a, .navigation-secondary div {
-    font-family: Google Sans;
+    font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -58,5 +60,5 @@ nav .text-container {
     display: inline-block;
     border: 1.5px solid #222222;
     box-sizing: border-box;
-    padding: 5px 18px;
+    padding: 4px 16px;
 }
