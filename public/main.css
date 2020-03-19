@@ -1,7 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 /* FOR NAVBAR */
+
+nav {
+    margin: 20px 0;
+}
 
 nav img {
     vertical-align: middle; 
+    margin-top: -5px;
 }
 
 nav .navigation-primary {
@@ -61,4 +70,98 @@ nav .text-container {
     border: 1.5px solid #222222;
     box-sizing: border-box;
     padding: 4px 16px;
+}
+
+/*FOR FOOTER*/
+
+footer {
+    background: #222222;
+    margin: 20px 0;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.footer-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 64px;
+}
+
+footer img {
+    vertical-align: middle;
+    margin-top: -5px;
+}
+footer #footer-finisher {
+    font-family: Circular Std, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18.5px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+
+}
+
+.footer-secondary {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-secondary a {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 64px;
+}
+
+.footer-container-lower {
+    
+    width: 90%;
+    margin: 0 auto;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+
+    color: #C4C4C4;
+
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    padding-bottom: 64px;
+}
+
+.footer-container-lower div {
+    width: 45%;
+}
+
+.footer-container-lower .login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.footer-container-lower .login-container #admin-login {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 0.02em;
+    color: #8E8E8E;
 }
