@@ -72,11 +72,124 @@ nav .text-container {
     padding: 4px 16px;
 }
 
+/*FOR HOME FINSIHERS*/
+.home-finishers-container {
+    background: #FFD457;
+    padding: 64px 0;
+}
+
+.home-finishers-container .content-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home-finishers-container .header-groupings h1 {
+    text-align: center;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39.06px;
+    line-height: 50px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+
+}
+
+.home-finishers-container .header-groupings h2 {
+    text-align: center;
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.people-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.people-collection-child {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    margin: 32px 0;
+    justify-content: center;
+}
+
+.person-info p  {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+    margin-left: 12px;
+
+}
+.person-info .person-name {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.home-finishers-container .link-holder {
+    margin: 20px auto 0 auto;
+}
+
+.link-holder p {
+    text-align: center;
+}
+
+#view-more-link {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+    text-decoration: none;
+    border: 4px solid #222222;
+    box-sizing: border-box;
+    padding: 4px 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*FOR FOOTER*/
 
 footer {
     background: #222222;
-    margin: 20px 0;
     height: 360px;
     display: flex;
     flex-direction: column;
