@@ -87,10 +87,12 @@ nav .text-container {
 }
 
 .home-hero-container .text-content-group {
-    opacity: 0.8;
-    margin: 30px;
+    opacity: 0.9;
+    margin: 100px;
     background-color: #FFFFFF;
-    filter: alpha(opacity=80);
+    height: 200px;
+    width: 80%;
+    filter: alpha(opacity=90);
 }
 
 .home-hero-container .text-content-group h1 {
@@ -98,27 +100,25 @@ nav .text-container {
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 39.06px;
-    line-height: 50px;
-    /* identical to box height */
-
-    text-align: center;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: left;
     letter-spacing: 0.02em;
-
+    margin: 50px 50px 50px 50px;
     color: #222222;
 
 }
 
 .home-hero-container .header-groupings p {
     text-align: left;
-    font-family: Google Sans;
+    font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 25px;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.02em;
-
+    margin: 50px 50px 50px 50px;
     color: #222222;
 }
 
