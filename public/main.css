@@ -72,11 +72,97 @@ nav .text-container {
     padding: 4px 16px;
 }
 
+/*FOR HOME HERO*/
+.home-hero-container {
+    background-image: url(assets/images/bg-home-hero.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 400px 0;
+}
+
+.home-hero-container .content-container {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+}
+
+.home-hero-container .text-content-group {
+    opacity: 0.8;
+    margin: 30px;
+    background-color: #FFFFFF;
+    filter: alpha(opacity=80);
+}
+
+.home-hero-container .text-content-group h1 {
+    text-align: left;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39.06px;
+    line-height: 50px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+
+}
+
+.home-hero-container .header-groupings p {
+    text-align: left;
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.home-hero-container .link-holder {
+    margin: 20px auto 0 auto;
+}
+
+.link-holder p {
+    text-align: center;
+}
+
+#view-more-link {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+    text-decoration: none;
+    border: 4px solid #222222;
+    box-sizing: border-box;
+    padding: 4px 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*FOR FOOTER*/
 
 footer {
     background: #222222;
-    margin: 20px 0;
     height: 360px;
     display: flex;
     flex-direction: column;
