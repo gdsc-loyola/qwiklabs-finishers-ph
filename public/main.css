@@ -72,10 +72,27 @@ nav .text-container {
     padding: 4px 16px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*FOR HOME FINSIHERS*/
 .home-finishers-container {
     background: #FFD457;
     padding: 64px 0;
+    width: 100vw;
 }
 
 .home-finishers-container .content-container {
@@ -172,8 +189,35 @@ nav .text-container {
     padding: 4px 16px;
 }
 
+@media screen and (max-width: 1050px) {
+    .people-collection-child {
+        width: 50%;
 
+    }
 
+    .home-finishers-container .header-groupings h1 {
+        font-size: 26px;
+    
+    }
+    
+    .home-finishers-container .header-groupings h2 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home-finishers-container {
+        width: 100%;
+    }
+    .people-collection-child div img {
+        width: 60%;
+        height: 60%;
+    }
+
+    .person-info p {
+        margin-left: -12px;
+    }
+}
 
 
 
