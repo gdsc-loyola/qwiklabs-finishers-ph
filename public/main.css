@@ -77,22 +77,24 @@ nav .text-container {
     background-image: url(assets/images/bg-home-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding: 400px 0;
+    padding-top: 400px;
+    height: 500px;
 }
 
 .home-hero-container .content-container {
     width: 50%;
+    height: max-content;
     float: left;
     margin: 0 auto;
 }
 
 .home-hero-container .text-content-group {
-    opacity: 0.9;
-    margin: 100px;
+    opacity: 0.95;
+    margin: 75px;
     background-color: #FFFFFF;
-    height: 200px;
-    width: 80%;
-    filter: alpha(opacity=90);
+    height: 100%;
+    width: 100%;
+    filter: alpha(opacity=95);
 }
 
 .home-hero-container .text-content-group h1 {
@@ -100,16 +102,17 @@ nav .text-container {
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
-    line-height: 40px;
+    font-size: 40px;
+    line-height: 45px;
     text-align: left;
     letter-spacing: 0.02em;
-    margin: 50px 50px 50px 50px;
+    margin: 0px 50px 20px 50px;
+    padding: 50px 0px 0px 0px;
     color: #222222;
 
 }
 
-.home-hero-container .header-groupings p {
+.home-hero-container .text-content-group p {
     text-align: left;
     font-family: Google Sans, sans-serif;
     font-style: normal;
@@ -118,40 +121,29 @@ nav .text-container {
     line-height: 25px;
     text-align: left;
     letter-spacing: 0.02em;
-    margin: 50px 50px 50px 50px;
+    margin: 20px 50px 0px 50px;
+    padding: 0px 0px 5px 0px;
     color: #222222;
 }
 
-.home-hero-container .link-holder {
-    margin: 20px auto 0 auto;
+.home-hero-container .text-content-group .link-holder {
+    margin: 5px 0px 50px 0px;
 }
 
 .link-holder p {
     text-align: center;
 }
 
-#view-more-link {
+.home-hero-container .text-content-group .link-holder button{
+    display: inline-block;
+    border: 3px solid #222222;
+    box-sizing: border-box;
+    padding: 10px 20px;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: 0.02em;
-
-    color: #222222;
-    text-decoration: none;
-    border: 4px solid #222222;
-    box-sizing: border-box;
-    padding: 4px 16px;
+    margin: 5px 0px 50px 0px;
 }
-
-
-
-
-
-
-
-
 
 
 
