@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 /* FOR NAVBAR */
 
 nav {
@@ -9,7 +10,7 @@ nav {
 }
 
 nav img {
-    vertical-align: middle; 
+    vertical-align: middle;
     margin-top: -5px;
 }
 
@@ -42,11 +43,13 @@ nav .text-container {
     justify-content: space-between;
 }
 
-.navigation-primary, .navigation-secondary {
+.navigation-primary,
+.navigation-secondary {
     display: inline-block;
 }
 
-.navigation-secondary a, .navigation-secondary div {
+.navigation-secondary a,
+.navigation-secondary div {
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -61,7 +64,7 @@ nav .text-container {
     color: #151522;
     margin-left: 20px;
     margin-right: 20px;
-    
+
 
 }
 
@@ -88,6 +91,12 @@ nav .text-container {
     margin: 0 auto;
 }
 
+.text-content-group {
+    display: flex;
+    align-items: center;
+    padding: 30px 60px;
+}
+
 .home-hero-container .text-content-group {
     opacity: 0.95;
     margin: 75px;
@@ -106,8 +115,47 @@ nav .text-container {
     line-height: 45px;
     text-align: left;
     letter-spacing: 0.02em;
-    margin: 0px 50px 20px 50px;
-    padding: 50px 0px 0px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FOR HOME FINSIHERS*/
+.home-finishers-container {
+    background: #FFD457;
+    padding: 64px 0;
+    width: 100vw;
+}
+
+.home-finishers-container .content-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.home-finishers-container .header-groupings h1 {
+    text-align: center;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39.06px;
+    line-height: 50px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
     color: #222222;
 
 }
@@ -115,6 +163,11 @@ nav .text-container {
 .home-hero-container .text-content-group p {
     text-align: left;
     font-family: Google Sans, sans-serif;
+}
+
+.home-finishers-container .header-groupings h2 {
+    text-align: center;
+    font-family: Google Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
@@ -128,13 +181,59 @@ nav .text-container {
 
 .home-hero-container .text-content-group .link-holder {
     margin: 5px 0px 50px 0px;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.people-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.people-collection-child {
+    display: flex;
+    align-items: center;
+    width: 25%;
+    margin: 32px 0;
+    justify-content: center;
+}
+
+.person-info p {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+    margin-left: 12px;
+
+}
+
+.person-info .person-name {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.home-finishers-container .link-holder {
+    margin: 20px auto 0 auto;
 }
 
 .link-holder p {
     text-align: center;
 }
 
-.home-hero-container .text-content-group .link-holder button{
+.home-hero-container .text-content-group .link-holder button {
     display: inline-block;
     border: 3px solid #222222;
     box-sizing: border-box;
@@ -145,8 +244,51 @@ nav .text-container {
     margin: 5px 0px 50px 0px;
 }
 
+#view-more-link {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
 
+    color: #222222;
+    text-decoration: none;
+    border: 4px solid #222222;
+    box-sizing: border-box;
+    padding: 4px 16px;
+}
 
+@media screen and (max-width: 1050px) {
+    .people-collection-child {
+        width: 50%;
+
+    }
+
+    .home-finishers-container .header-groupings h1 {
+        font-size: 26px;
+
+    }
+
+    .home-finishers-container .header-groupings h2 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .home-finishers-container {
+        width: 100%;
+    }
+
+    .people-collection-child div img {
+        width: 60%;
+        height: 60%;
+    }
+
+    .person-info p {
+        margin-left: -12px;
+    }
+}
 
 
 
@@ -173,6 +315,7 @@ footer img {
     vertical-align: middle;
     margin-top: -5px;
 }
+
 footer #footer-finisher {
     font-family: Circular Std, sans-serif;
     font-style: normal;
@@ -203,7 +346,7 @@ footer #footer-finisher {
 }
 
 .footer-container-lower {
-    
+
     width: 90%;
     margin: 0 auto;
     font-family: Google Sans, sans-serif;
