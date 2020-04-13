@@ -1,3 +1,10 @@
+body,
+html {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -56,11 +63,8 @@ nav .text-container {
     font-size: 14px;
     line-height: 18px;
     /* identical to box height */
-
     letter-spacing: 0.02em;
-
     /* Black */
-
     color: #151522;
     margin-left: 20px;
     margin-right: 20px;
@@ -77,31 +81,27 @@ nav .text-container {
 
 /*FOR HOME HERO*/
 .home-hero-container {
-    background-image: url(assets/images/bg-home-hero.png);
+    background-image: url(../assets/images/bg-home-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 400px;
-    height: 500px;
+    height: 90vh;
+    display: flex;
+    align-items: flex-end;
 }
 
-.home-hero-container .content-container {
-    width: 50%;
-    height: max-content;
-    float: left;
-    margin: 0 auto;
-}
 
 .text-content-group {
     display: flex;
     align-items: center;
     padding: 30px 60px;
+    margin-left: 90px;
+    margin-bottom: 90px;
 }
 
 .home-hero-container .text-content-group {
     opacity: 0.95;
-    margin: 75px;
+    max-width: 720px;
     background-color: #FFFFFF;
-    height: 100%;
     width: 100%;
     filter: alpha(opacity=95);
 }
@@ -136,12 +136,10 @@ nav .text-container {
 .home-finishers-container {
     background: #FFD457;
     padding: 64px 0;
-    width: 100vw;
-}
+    width: 100%;
+    display: flex;
+    align-items: center;
 
-.home-finishers-container .content-container {
-    width: 90%;
-    margin: 0 auto;
 }
 
 .home-finishers-container .header-groupings h1 {
@@ -163,6 +161,7 @@ nav .text-container {
 .home-hero-container .text-content-group p {
     text-align: left;
     font-family: Google Sans, sans-serif;
+    margin: 8px 0;
 }
 
 .home-finishers-container .header-groupings h2 {
@@ -180,10 +179,8 @@ nav .text-container {
 }
 
 .home-hero-container .text-content-group .link-holder {
-    margin: 5px 0px 50px 0px;
-    text-align: center;
+    margin: 8px 0;
     letter-spacing: 0.02em;
-
     color: #222222;
 }
 
@@ -241,7 +238,6 @@ nav .text-container {
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
-    margin: 5px 0px 50px 0px;
 }
 
 #view-more-link {
