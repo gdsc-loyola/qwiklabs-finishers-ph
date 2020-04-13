@@ -145,14 +145,123 @@ nav .text-container {
     margin: 5px 0px 50px 0px;
 }
 
+/*REGISTER*/
+.register-container{
+    display: inline-flex;
+    flex-direction: row;
+    max-width: 100%;
+}
 
+.register-form {
+    background: #fff;
+    padding: 5% 10%;
+    display: inline-block;
+    flex-direction: row;
+    width: 40%;
+}
 
+.register-form h1{
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: left;
+    letter-spacing: 0.02em;
+    padding: 50px 0px 0px 0px;
+    color: #222222;
+}
 
+.register-form p{
+    text-align: left;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: left;
+    letter-spacing: 0.02em;
+    color: #222222;
+}
 
+.item {
+    position: relative;
+    margin: 10px 0;
+}
 
+.name-items{
+    display: flex;
+}
+
+.name-item-1,
+.name-item-2 {
+    width: 45%;
+    position: relative;
+}
+
+.name-item-2{
+    padding-left: 50px;
+}
+
+.item input,
+.name-items input{
+    display: block;
+    background: transparent;
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 10px;
+    width: 100%;
+    color: #d2d2d2;
+    border: 1px solid;
+}
+
+::placeholder { 
+    color: #d2d2d2;
+    opacity: 1; 
+}
+
+.upload{
+    border-style: dashed;
+    border-width: 1px;
+    width: 100%;
+    height: 40px;
+    color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    font-size: 14px;
+}
+
+.upload a{
+    color: #48d08f;
+    text-decoration: none;
+}
+
+.submit-btn{
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+    background: #48d08f;
+    border-width: 0px;
+
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.register-photo{
+    width: 60%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: row;
+}
 
 /*FOR FOOTER*/
-
 footer {
     background: #222222;
     height: 360px;
