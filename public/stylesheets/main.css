@@ -588,3 +588,19 @@ footer #footer-finisher {
     letter-spacing: 0.02em;
     color: #8E8E8E;
 }
+
+@media screen and (max-width:768px) {
+
+    .footer-secondary {
+        display: none;
+    }
+
+    .footer-container-lower {
+        flex-direction: column;
+    }
+    #admin-login {
+        position: absolute;
+        left: 0;
+        margin-top: 30px;
+    }
+}
