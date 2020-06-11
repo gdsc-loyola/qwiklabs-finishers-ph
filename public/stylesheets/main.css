@@ -465,6 +465,139 @@ nav .text-container {
     }
 
 }
+/*FOR QUESTS*/
+
+
+
+*,
+*::before,
+*::after { 
+  box-sizing: border-box;
+}
+
+.header-container {
+  width: 100%;
+  overflow: auto;
+  font-family: Google Sans, sans-serif;
+}
+
+.quests-title {
+  padding-left: 5%;
+  float: left;
+  vertical-align: middle;
+  font-size: xx-large;
+}
+
+.search-box {
+  margin-top: 20px;
+  margin-right: 40px;
+  vertical-align: middle;
+  float: right;
+  overflow: auto;
+}
+
+.search-box input{
+  width: 415px;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  margin-right: 45px;
+  margin-top: 10px;
+  background: white;
+  font-size: x-large !important;
+  color: #C4C4C4;
+}
+
+.card-topbar {
+  justify-content: flex-start;
+  width: inherit;
+  height: 12px;
+  background: #222222;
+}
+ 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(295px, 2fr));
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 25px;
+  font-family: Google Sans, sans-serif;
+}
+
+.cards-item {
+  padding: 1rem;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 350px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.card-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 25px;
+  padding-left: 25px;
+}
+
+.card-image {
+  display: block;
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-bottom: 0;
+}
+
+.card-title {
+margin-top: 0;
+  margin-bottom: 12px;
+  line-height: xx-large;
+  letter-spacing: 0.02em;
+  color: #222222;
+  font-style: normal;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.card-icon {
+  vertical-align: text-bottom;
+  margin-right: 5px;
+  font-size: medium !important;
+}
+
+.card-text {
+  font-size: small;
+  line-height: large;
+  margin-bottom: 20px;
+  color: #222222;
+}
+
+.card__btn-holder {
+    justify-content: flex-start;
+  }
+
+.card-btn {
+  padding: 10px;
+  width: 50%;
+  background-color: white;
+}
+
+.card-btn:hover{
+  background-color: #222222;
+  border-color: #222222;
+  color: white;
+}
 
 /*FOR FOOTER*/
 footer {
