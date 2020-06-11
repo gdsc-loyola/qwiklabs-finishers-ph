@@ -1,110 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <meta property="og:title" content="Qwiklabs Finishers PH" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:description"
-      content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests."
-    />
-    <meta
-      name="description"
-      content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="./stylesheets/normalize.css" />
-    <link rel="stylesheet" href="./stylesheets/main.css" />
+  <meta property="og:title" content="Qwiklabs Finishers PH" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description"
+    content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests." />
+  <meta name="description"
+    content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests." />
 
-    <title>Register | Qwiklabs Finishers PH</title>
-  </head>
-  <body>
-    <!--REGISTER-->
-<section id="register">
-  <div class="register-container">
-    <div class="register-form" id="register-form">
-      <form action="" method="POST" id="registrationform">
-      <h1>Register</h1>
-      <div class="alert">Message Sent</div>
-      <p>Fill in the required information for you to be showcased on our website.</p><br>
-      <div class="name-items">
-        <div class="name-item-1">
-          <p>First Name</p>
-          <input type="text" id="first-name" placeholder="ex. Juan" value=""/>
-        </div>
-        <div class="name-item-2">
-          <p>Last Name</p>
-          <input type="text" id="last-name" placeholder="ex. de la Cruz" value=""/>
-        </div>
+  <link rel="stylesheet" href="./stylesheets/normalize.css" />
+  <link rel="stylesheet" href="./stylesheets/main.css" />
+
+  <title>Register | Qwiklabs Finishers PH</title>
+</head>
+
+<body>
+  <nav>
+    <div class="text-container">
+      <div class="navigation-primary">
+        <img src="../assets/images/image 1.png" />
+        <span>FINISHERS</span>
+        <img src="../assets/images/image 2.png" />
       </div>
-      <div class="item">
-        <p>Quest Title</p>
-        <input type="dropdown" id="quest-title" placeholder="Select a Quest" value=""/>
+      <div class="navigation-secondary">
+        <a href="#">Home</a>
+        <a href="#">Quests</a>
+        <a href="#">Finishers</a>
+        <a href="register.html"><button>Register</button></a>
       </div>
-      <div class="item">
-        <p>Date of Completion</p>
-        <input type="date" id="date" placeholder="Select the date of completion" value=""/>
+    </div>
+  </nav>
+  <!--REGISTER-->
+  <section id="register">
+    <div class="register-container">
+      <div class="register-form" id="register-form">
+        <form method="POST" id="registrationform">
+          <h1>Register</h1>
+          <div class="alert">Message Sent</div>
+          <p>Fill in the required information for you to be showcased on our website.</p><br>
+          <div class="name-items">
+            <div class="name-item-1">
+              <p>First Name</p>
+              <input type="text" id="first-name" placeholder="ex. Juan" value="" />
+            </div>
+            <div class="name-item-2">
+              <p>Last Name</p>
+              <input type="text" id="last-name" placeholder="ex. de la Cruz" value="" />
+            </div>
+          </div>
+          <div class="item">
+            <p>Quest Title</p>
+            <input type="dropdown" id="quest-title" placeholder="Select a Quest" value="" />
+          </div>
+          <div class="item">
+            <p>Date of Completion</p>
+            <input type="date" id="date" placeholder="Select the date of completion" value="" />
+          </div>
+          <div class="item">
+            <p>Qwiklabs Public Link</p>
+            <input type="text" id="link" placeholder="https://www.qwiklabs.com/" value="" />
+          </div>
+          <div class="item">
+            <p>Upload your Display Photo</p>
+            <div class="upload">
+              <p><a href="#">Drop file</a> here or <a href="#">Select file</a></p>
+            </div>
+          </div>
+          <div>
+            <button class="submit-btn" id="submit-btn" type="submit">Submit</button>
+          </div>
+        </form>
       </div>
-      <div class="item">
-        <p>Qwiklabs Public Link</p>
-        <input type="text" id="link" placeholder="https://www.qwiklabs.com/" value=""/>
+      <div class="register-photo">
+        <img src="./assets/images/register.jpg">
       </div>
-      <div class="item">
-        <p>Upload your Display Photo</p>
-        <div class="upload">
-          <p><a href="#">Drop file</a> here or <a href="#">Select file</a></p>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
       <div>
-        <button class="submit-btn" id="submit-btn" type="submit">Submit</button>
+        <img src="./assets/images/image 1.png" />
+        <span id="footer-finisher">FINISHERS</span>
       </div>
-    </form>
+      <div class="footer-secondary">
+        <a href="#">Home</a>
+        <a href="#">Quests</a>
+        <a href="#">Finishers</a>
+        <a href="#">Register</a>
+      </div>
     </div>
-    <div class="register-photo">
-      <img src="./assets/images/register.jpg">
+    <div class="footer-container-lower">
+      <div>
+        <p>Made by Student Developer Clubs - Loyola</p>
+        <p>Copyright © 2020 All rights reserved</p>
+      </div>
+      <div class="login-container">
+        <a href="#" id="admin-login">Admin Log in</a>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
 
-<footer>
-  <div class="footer-container">
-    <div>
-      <img src="./assets/images/image 1.png" />
-      <span id="footer-finisher">FINISHERS</span>
-    </div>
-    <div class="footer-secondary">
-      <a href="#">Home</a>
-      <a href="#">Quests</a>
-      <a href="#">Finishers</a>
-      <a href="#">Register</a>
-    </div>
-  </div>
-  <div class="footer-container-lower">
-    <div>
-      <p>Made by Student Developer Clubs - Loyola</p>
-      <p>Copyright © 2020 All rights reserved</p>
-    </div>
-    <div class="login-container">
-      <a href="#" id="admin-login">Admin Log in</a>
-    </div>
-  </div>
-</footer>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.14.2/firebase-app.js"></script>
-<script src="/__/firebase/7.14.2/firebase-database.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
-<script src="./scripts/index.js"></script>
-<script src="./scripts/register.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+  <script src="./scripts/index.js"></script>
+  <script src="./scripts/register.js"></script>
 
-  </body>
+</body>
+
 </html>
