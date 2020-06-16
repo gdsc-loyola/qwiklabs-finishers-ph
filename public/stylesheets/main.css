@@ -79,38 +79,6 @@ nav .text-container {
     padding: 4px 16px;
 }
 
-.burger-display {
-    display: none;
-}
-
-.burger div {
-    width: 25px;
-    height: 3px; 
-    background: black;
-    margin: 5px;
-}
-
-@media screen and (max-width:768px) {
-    .nav-display {
-        display: none;
-    }
-
-    .burger-display {
-        display: block;
-    }
-    .navigation-secondary {
-        position: absolute;
-        right: 0;
-        height: 15vh;
-        width: 100vw;
-        top: 8vh;
-        background: white;
-    }
-    .navigation-secondary a {
-        height: 18%;
-    }
-}
-
 /*FOR HOME HERO*/
 .home-hero-container {
     background-image: url(../assets/images/bg-home-hero.png);
@@ -175,6 +143,7 @@ nav .text-container {
 }
 
 .home-finishers-container .header-groupings h1 {
+    text-align: center;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -202,6 +171,7 @@ nav .text-container {
     font-weight: normal;
     font-size: 20px;
     line-height: 25px;
+    text-align: left;
     letter-spacing: 0.02em;
     margin: 20px 50px 0px 50px;
     padding: 0px 0px 5px 0px;
@@ -720,20 +690,4 @@ footer #footer-finisher {
     text-align: right;
     letter-spacing: 0.02em;
     color: #8E8E8E;
-}
-
-@media screen and (max-width:768px) {
-
-    .footer-secondary {
-        display: none;
-    }
-
-    .footer-container-lower {
-        flex-direction: column;
-    }
-    #admin-login {
-        position: absolute;
-        left: 0;
-        margin-top: 30px;
-    }
 }
