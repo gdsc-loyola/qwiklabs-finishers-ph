@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -17,6 +18,7 @@
   <link rel="stylesheet" href="stylesheets/main.css" />
 
   <title>Home | Qwiklabs Finishers PH</title>
+
 </head>
 
 <body>
@@ -26,14 +28,25 @@
         <img src="assets/images/image 1.png" alt="Qwiklabs logo"/>
         <span>FINISHERS</span>
         <img src="assets/images/image 2.png" alt="PH Icon"/>
+
+        <div class="navigation-secondary">
+          <a href="#">Home</a>
+          <a href="quests.html">Quests</a>
+          <a href="#">Finishers</a>
+          <a href="register.html">
+	    <button>Register</button>
+	  </a>
+        </div>
+
+      <div class="burger burger-display" onclick="navtoggle()">
+        <div class="first-line"></div>
+        <div class="second-line"></div>
+        <div class="third-line"></div>
+
       </div>
-      <div class="navigation-secondary">
-        <a href="#">Home</a>
-        <a href="#">Quests</a>
-        <a href="#">Finishers</a>
-        <a href="register.html"><button>Register</button></a>
-      </div>
-    </div>
+
+   </div>
+
   </nav>
 
   <!--HOME-HERO-->
@@ -85,6 +98,7 @@
             <p>Jun 23, 2018</p>
           </div>
         </div>
+
         <div class="people-collection-child">
           <div>
             <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
@@ -125,8 +139,8 @@
             <p>Stackdriver Logging</p>
             <p>Jun 23, 2018</p>
           </div>
+                                                                
         </div>
-
         <div class="people-collection-child">
           <div>
             <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
@@ -214,7 +228,7 @@
       </div>
       <div class="footer-secondary">
         <a href="#">Home</a>
-        <a href="#">Quests</a>
+        <a href="quests.html">Quests</a>
         <a href="#">Finishers</a>
         <a href="register.html">Register</a>
       </div>
@@ -238,6 +252,9 @@
 
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
+
+  <script src='scripts/index.js'></script>
+
 </body>
 
 </html>
