@@ -92,7 +92,7 @@ nav .text-container {
 .home-finishers-container {
     background: #FFD457;
     padding: 64px 0;
-    width: 100vw;
+    width: 100%;
 }
 
 .home-finishers-container .content-container {
@@ -110,7 +110,6 @@ nav .text-container {
     /* identical to box height */
 
     text-align: center;
-    letter-spacing: 0.02em;
 
     color: #222222;
 
