@@ -107,14 +107,18 @@ nav span {
         position: relative;
         left: auto;
         right: auto;
-        margin-left: 30vw;
+        margin-left: 20vw;
+    }
+
+    nav img {
+        width: 20vw;
+    }
+
+    nav span{
+        font-size: 0.8em;
     }
 
     img[alt = "PH Icon"]{
-        display: none;
-    }
-
-    .navigation-secondary{
         display: none;
     }
 
