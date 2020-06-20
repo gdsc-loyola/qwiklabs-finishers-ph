@@ -15,7 +15,7 @@ html {
 nav {
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 72px;
     background-color: white;
     padding: 20px 0;
@@ -145,7 +145,6 @@ nav span {
 
 }
 
-/* mobile view of .navigation-secondary and register button*/
 
 
 
@@ -155,7 +154,7 @@ nav span {
     background-image: url(../assets/images/bg-home-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     align-items: flex-end;
 }
@@ -164,31 +163,78 @@ nav span {
 .text-content-group {
     display: flex;
     align-items: center;
-    padding: 30px 60px;
+    padding: 50px;
     margin-left: 90px;
     margin-bottom: 90px;
-}
-
-.home-hero-container .text-content-group {
     opacity: 0.95;
-    max-width: 720px;
+    max-width: 55vw;
     background-color: #FFFFFF;
     width: 100%;
     filter: alpha(opacity=95);
 }
 
-.home-hero-container .text-content-group h1 {
+.text-content-group h1 {
     text-align: left;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 2rem;
     text-align: left;
     letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.text-content-group p{
+    width: 70%;
+    margin: 20px 0;
+    text-align: left;
+    font-family: Google Sans, sans-serif;
+    margin: 20px 0;
+}
+
+.text-content-group button{
+    background-color: white;
+}
+
+@media screen and (max-width: 850px) {
+    .text-content-group{
+        max-width: 60vw;
+    }
+    .text-content-group h1 {
+        font-size: 1.5rem;
+    }
+    .text-content-group p{
+        width: 100%;
+    }
 }
 
 
+/*FOR HOME-QUEST*/
+
+.home-quest{
+    padding-bottom: 30px;
+}
+
+.home-quest h1{
+    text-align: center;
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39.06px;
+    line-height: 50px;
+    margin: 64px 0 0 0;
+}
+
+.home-quest p{
+    text-align: center;
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    margin: 0 0 44px 0;
+}
 
 
 
@@ -229,11 +275,6 @@ nav span {
 
 }
 
-.home-hero-container .text-content-group p {
-    text-align: left;
-    font-family: Google Sans, sans-serif;
-    margin: 8px 0;
-}
 
 .home-finishers-container .header-groupings h2 {
     text-align: center;
@@ -341,6 +382,8 @@ nav span {
         font-size: 17px;
     }
 }
+
+@media screen and (max-width: 850px) {
 
 @media screen and (max-width: 600px) {
     .home-finishers-container {
@@ -616,6 +659,7 @@ nav span {
 
 .card-content {
   display: flex;
+  justify-content: space-between;
   flex: 1 1 auto;
   flex-direction: column;
   padding: 25px;
