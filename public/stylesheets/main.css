@@ -359,7 +359,7 @@ nav span {
 
 /*REGISTER*/
 .register-container{
-    display: inline-flex;
+    display: flex;
     flex-direction: row;
 }
 
@@ -368,7 +368,7 @@ nav span {
     padding: 5% 10%;
     display: inline-block;
     flex-direction: row;
-    width: 40%;
+    width: 80%;
 }
 
 .register-form h1{
@@ -414,12 +414,12 @@ nav span {
 
 .name-item-1,
 .name-item-2 {
-    width: 45%;
+    width: 50%;
     position: relative;
 }
 
-.name-item-2{
-    padding-left: 50px;
+.name-item-1 {
+    padding-right: 50px;
 }
 
 .item input,
