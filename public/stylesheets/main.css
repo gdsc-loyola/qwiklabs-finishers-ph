@@ -196,18 +196,34 @@ nav span {
     background-color: white;
 }
 
+
 @media screen and (max-width: 850px) {
     .text-content-group{
-        max-width: 60vw;
+        max-width: 70vw;
+        margin: 0 auto 10%;
     }
+
     .text-content-group h1 {
         font-size: 1.5rem;
     }
     .text-content-group p{
+        font-size: 1rem;
         width: 100%;
     }
 }
 
+@media screen and (max-width: 450px) {
+    .text-content-group{
+        padding: 20px;
+    }
+    .text-content-group h1 {
+        font-size: 1.2rem;
+    }
+    .text-content-group p{
+        font-size: 0.8rem;
+        width: 100%;
+    }
+}
 
 /*FOR HOME-QUEST*/
 
@@ -237,16 +253,91 @@ nav span {
 }
 
 
-
-
-
-
-
-
-
-
-
-
+.home-card-topbar {
+    justify-content: flex-start;
+    width: inherit;
+    height: 12px;
+    background: #222222;
+  }
+   
+.home-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(295px, 2fr));
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 25px;
+    font-family: Google Sans, sans-serif;
+  }
+  
+.home-cards-item {
+    padding: 1rem;
+  }
+  
+.home-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+.home-card-content {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 25px;
+    padding-left: 25px;
+  }
+  
+.home-card-image {
+    display: block;
+    margin-top: 20px;
+    margin-left: 25px;
+    margin-bottom: 0;
+  }
+  
+.home-card-title {
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: xx-large;
+    letter-spacing: 0.02em;
+    color: #222222;
+    font-style: normal;
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+.home-card-icon {
+    vertical-align: text-bottom;
+    margin-right: 5px;
+    font-size: medium !important;
+  }
+  
+.home-card-text {
+    font-size: small;
+    line-height: large;
+    margin-bottom: 20px;
+    color: #222222;
+  }
+  
+.home-card__btn-holder {
+      justify-content: flex-start;
+    }
+  
+.home-card-btn {
+    padding: 10px;
+    width: 50%;
+    background-color: white;
+  }
+  
+.home-card-btn:hover{
+    background-color: #222222;
+    border-color: #222222;
+    color: white;
+  }
 
 
 /*FOR HOME FINSIHERS*/
@@ -383,16 +474,22 @@ nav span {
     }
 }
 
-@media screen and (max-width: 850px) {
-
 @media screen and (max-width: 600px) {
     .home-finishers-container {
         width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 
+    .people-collection-child {
+        width: 90%;
+        margin: 20px auto;
+    }
+    
     .people-collection-child div img {
-        width: 60%;
-        height: 60%;
+        width: 70%;
+        height: 70%;
+        margin-right: 5px;
     }
 
     .person-info p {
@@ -579,8 +676,6 @@ nav span {
 
 }
 /*FOR QUESTS*/
-
-
 
 *,
 *::before,
