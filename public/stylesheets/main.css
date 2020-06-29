@@ -672,7 +672,7 @@ margin-top: 0;
 /*FOR FOOTER*/
 footer {
     background: #222222;
-    height: 360px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -720,6 +720,48 @@ footer #footer-finisher {
     margin-left: 64px;
 }
 
+.reg-mobile{
+    display: none;
+    padding: 10px 0;
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    margin: 10px 0;
+}
+
+.reg-mobile h1{
+    font-family: Google Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+
+.reg-mobile button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    border: 2px solid white;
+    font-family: 'Open sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+
 .footer-container-lower {
 
     width: 90%;
@@ -760,5 +802,58 @@ footer #footer-finisher {
     text-align: right;
     letter-spacing: 0.02em;
     color: #8E8E8E;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-container {
+        padding-top: 34px;
+        padding-left: 10px;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+
+    .footer-secondary{
+        flex-direction: column;
+    }
+
+    .footer-secondary a{
+        margin: 15px 0 0 0;
+    }
+
+    .footer-secondary a:nth-child(4){
+        display: none;
+    }
+
+    .reg-mobile{
+        display: block;
+    }
+
+    .footer-container-lower{
+        left: 0;
+        width: 100%;
+    }
+
+    .footer-container-lower div:first-child{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        font-size: 2vw;
+        background-color: #111111;
+    }
+
+    .footer-container-lower p:first-child{
+        margin-right: 2px;
+    }
+
+    .footer-container-lower .login-container {
+        display: none;
+    }
 }
 
