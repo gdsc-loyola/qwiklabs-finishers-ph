@@ -228,6 +228,9 @@ nav span {
 /*FOR HOME-QUEST*/
 
 .home-quest{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-bottom: 30px;
 }
 
@@ -331,6 +334,7 @@ nav span {
     padding: 10px;
     width: 50%;
     background-color: white;
+    font-family: "Open Sans", sans-serif;
   }
   
 .home-card-btn:hover{
@@ -338,6 +342,20 @@ nav span {
     border-color: #222222;
     color: white;
   }
+
+.home-card-viewmore{
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.02em;
+    color: #222222;
+    text-decoration: none;
+    border: 4px solid #222222;
+    box-sizing: border-box;
+    padding: 14px 28px;
+}
 
 
 /*FOR HOME FINSIHERS*/
