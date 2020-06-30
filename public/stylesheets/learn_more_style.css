@@ -15,6 +15,12 @@
     width: 50%;
 }
 
+.quest-finishers {
+    background: #dbdbdb;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
 .learn-more-container h1 {
     font-style: normal;
     font-weight: bold;
