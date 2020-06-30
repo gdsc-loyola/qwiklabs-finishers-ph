@@ -371,6 +371,9 @@ nav span {
     width: 80%;
 }
 
+
+
+
 .register-form h1{
     font-family: Google Sans, sans-serif;
     font-style: normal;
@@ -430,14 +433,19 @@ nav span {
     line-height: 1.2;
     padding: 10px;
     width: 100%;
-    color: #d2d2d2;
-    border: 1px solid;
 }
+
+input {
+    border: 1px solid #d2d2d2;
+}
+
 
 ::placeholder { 
     color: #d2d2d2;
     opacity: 1; 
 }
+
+
 
 .upload{
     border-style: dashed;
