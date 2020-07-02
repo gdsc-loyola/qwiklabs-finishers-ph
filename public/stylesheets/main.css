@@ -1130,6 +1130,10 @@ margin-top: 0;
         padding: 64px 76px;
     }
 
+    .finisher-group-header{
+        padding-bottom: 0;
+    }
+    
     .finisher-group-header h3{
         font-size: 20px;
     }
@@ -1146,9 +1150,6 @@ margin-top: 0;
 }
 
 @media screen and (max-width: 450px) {
-    .finisher-group-header{
-        padding-bottom: 0;
-    }
 
     .finisher-page{
         padding: 64px 26px;
