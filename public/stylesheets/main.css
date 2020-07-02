@@ -583,7 +583,8 @@ nav span {
     padding-right: 50px;
 }
 
-.item input,
+.item input, 
+.item select,
 .name-items input{
     display: block;
     background: transparent;
