@@ -14,6 +14,7 @@
   <meta name="description"
     content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests." />
 
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylesheets/normalize.css" />
   <link rel="stylesheet" href="stylesheets/main.css" />
 
@@ -21,33 +22,32 @@
 
 </head>
 
-<body>
-  <nav>
-    <div class="text-container">
-      <div class="navigation-primary">
-        <img src="assets/images/image 1.png" alt="Qwiklabs logo"/>
-        <span>FINISHERS</span>
-        <img src="assets/images/image 2.png" alt="PH Icon"/>
+  <body>
+
+    <nav>
+      <div class="text-container">
+        <div class="navigation-primary">
+          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+          <span>FINISHERS</span>
+          <img src="assets/images/image 2.png" alt = "PH Icon"/>
+        </div>
 
         <div class="navigation-secondary">
           <a href="#">Home</a>
           <a href="quests.html">Quests</a>
           <a href="#">Finishers</a>
           <a href="register.html">
-	    <button>Register</button>
-	  </a>
+	          <button id="regBtn">Register</button>
+	        </a>
         </div>
 
-      <div class="burger burger-display" onclick="navtoggle()">
-        <div class="first-line"></div>
-        <div class="second-line"></div>
-        <div class="third-line"></div>
-
+        <div class="burger_button" onclick="showMenu()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
       </div>
-
-   </div>
-
-  </nav>
+    </nav>
 
   <!--HOME-HERO-->
   <section class="home-hero-container">
@@ -77,10 +77,118 @@
         </div> -->
     </div>
   </section>
+
+  <section class="home-quest">
+    <h1>What are the latest quests?</h1>
+    <p>Check out what’s new with Qwiklabs.</p>
+    <ul class="home-cards">
+      <li class="home-cards-item">
+        <div class="home-card">
+          <header class="home-card-topbar"></header>
+          <div class="home-card-image"><img src="./assets/images/stackdriver_logging.png" alt="Stackdriver logging badge"></div>
+          <div class="home-card-content">
+            <div class="home-card-title">Stackdriver Logging</div>
+            <table class="home-card-text">
+              <tr>
+                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Credits icon">Fundamental</td>
+                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
+                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
+              </tr>
+              </table>
+              <div class="home-card-btn-holder">
+                <form action="https://www.qwiklabs.com">
+                  <button type="submit" class="home-card-btn">Learn more</button>
+                </form>
+              </div>
+          </div>
+        </div>
+      </li>
+      <li class="home-cards-item">
+        <div class="home-card">
+          <header class="home-card-topbar"></header>
+          <div class="home-card-image"><img src="./assets/images/gcp_essentials.png" alt="GCP Essentials badge"></div>
+          <div class="home-card-content">
+            <div class="home-card-title">GCP Essentials</div>
+            <table class="home-card-text">
+              <tr>
+                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Credits icon">Fundamental</td>
+                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
+                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
+              </tr>
+              </table>
+              <div class="home-card-btn-holder">
+                <form action="https://www.qwiklabs.com">
+                  <button type="submit" class="home-card-btn">Learn more</button>
+                </form>
+              </div>
+          </div>
+        </div>
+      </li>
+      <li class="home-cards-item">
+        <div class="home-card">
+          <header class="home-card-topbar"></header>
+          <div class="home-card-image"><img src="./assets/images/baseline.png" alt="Baseline badge"></div>
+          <div class="home-card-content">
+            <div class="home-card-title">Baseline: Data, ML, AI</div>
+            <table class="home-card-text">
+              <tr>
+                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Level icon">Fundamental</td>
+                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
+                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
+              </tr>
+              </table>
+              <div class="home-card-btn-holder">
+                <form action="https://www.qwiklabs.com">
+                  <button type="submit" class="home-card-btn">Learn more</button>
+                </form>
+              </div>
+          </div>
+        </div>
+      </li>
+      <li class="home-cards-item">
+        <div class="home-card">
+          <header class="home-card-topbar"></header>
+          <div class="home-card-image">
+            <img src="./assets/images/bigquery.png" alt="BigQuery badge"> 
+          </div>
+          <div class="home-card-content">
+            <div class="home-card-title">BigQuery Basics for Data Analysts</div>
+            <table class="home-card-text">
+              <tr>
+                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Level icon">Fundamental</td>
+                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
+              </tr>
+              <tr>
+                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
+                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
+              </tr>
+              </table>
+              <div class="home-card-btn-holder">
+                <form action="https://www.qwiklabs.com">
+                  <button type="submit" class="home-card-btn">Learn more</button>
+                </form>
+              </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <a href="quests.html" class="home-card-viewmore">View more</a>
+  </section>
+
+
   <section class="home-finishers-container">
     <div class="content-container">
       <div class="header-groupings">
-        <h1>Who were able to cross the finish line?</h1>
+        <h1>Who are the latest finishers?</h1>
         <h2>
           Check out tech enthusiasts who were able to finish various Qwiklabs
           quests.
@@ -90,7 +198,9 @@
         <!--INSERT PEOPLE HERE-->
         <div class="people-collection-child">
           <div>
+
             <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
+
           </div>
           <div class="person-info">
             <p class="person-name">Victoria Macoy</p>
@@ -121,6 +231,7 @@
         </div>
         <div class="people-collection-child">
           <div>
+
             <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
           </div>
           <div class="person-info">
@@ -141,6 +252,7 @@
           </div>
                                                                 
         </div>
+
         <div class="people-collection-child">
           <div>
             <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
@@ -231,6 +343,10 @@
         <a href="quests.html">Quests</a>
         <a href="#">Finishers</a>
         <a href="register.html">Register</a>
+        <div class="reg-mobile">
+          <h1>Showcase your <br> accomplishments</h1>
+          <a href="register.html"><button>Register</button></a>
+        </div>
       </div>
     </div>
     <div class="footer-container-lower">

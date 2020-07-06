@@ -16,6 +16,7 @@
       content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests."
     />
 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./stylesheets/normalize.css" />
     <link rel="stylesheet" href="./stylesheets/main.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,15 +28,24 @@
     <nav>
       <div class="text-container">
         <div class="navigation-primary">
-          <img src="./assets/images/image 1.png" alt="Qwiklabs logo" />
+          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
           <span>FINISHERS</span>
-          <img src="./assets/images/image 2.png" alt="PH Icon"/>
+          <img src="assets/images/image 2.png" alt = "PH Icon"/>
         </div>
+
         <div class="navigation-secondary">
           <a href="#">Home</a>
-          <a href="#">Quests</a>
+          <a href="quests.html">Quests</a>
           <a href="#">Finishers</a>
-          <button>Register</button>
+          <a href="register.html">
+	          <button id="regBtn">Register</button>
+	        </a>
+        </div>
+
+        <div class="burger_button" onclick="showMenu()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
         </div>
       </div>
     </nav>
@@ -83,12 +93,12 @@
                 <div class="card-title">GCP Essentials</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Credits icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -107,12 +117,12 @@
                 <div class="card-title">Baseline: Data, ML, AI</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -133,12 +143,12 @@
                 <div class="card-title">BigQuery Basics for Data Analysts</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -159,12 +169,12 @@
                 <div class="card-title">Stackdriver Logging</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -183,12 +193,12 @@
                 <div class="card-title">GCP Essentials</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -207,12 +217,12 @@
                 <div class="card-title">Baseline: Data, ML, AI</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -233,12 +243,12 @@
                 <div class="card-title">BigQuery Basics for Data Analysts</div>
                 <table class="card-text">
                   <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
+                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
+                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
                   </tr>
                   <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
+                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
+                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
                   </tr>
                   </table>
                   <div class="card-btn-holder">
@@ -264,6 +274,10 @@
           <a href="#">Quests</a>
           <a href="#">Finishers</a>
           <a href="register.html">Register</a>
+          <div class="reg-mobile">
+            <h1>Showcase your <br> accomplishments</h1>
+            <a href="register.html"><button>Register</button></a>
+          </div>
         </div>
       </div>
       <div class="footer-container-lower">
