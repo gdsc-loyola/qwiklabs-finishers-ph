@@ -516,9 +516,11 @@ nav span {
 }
 
 /*REGISTER*/
+
 .register-container{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .register-form {
@@ -528,9 +530,6 @@ nav span {
     flex-direction: row;
     width: 80%;
 }
-
-
-
 
 .register-form h1{
     font-family: Google Sans, sans-serif;
@@ -647,6 +646,62 @@ input {
     flex-direction: row;
 }
 
+.modal{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 20vh;
+    left: 17.5vw;
+    width: 65%;
+    padding: 50px 0;
+    background-color: white;
+    border-top: 16px solid #48D08F ;
+    z-index: 500;
+}
+
+.modal h1{
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #222222;
+    margin: 20px 0;
+}
+
+.modal p{
+    width: 60%;
+    margin-bottom: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #222222;
+}
+
+.modal a{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 2.5vw;
+    letter-spacing: 0.02em;
+    color: #222222;
+    padding: 10px;
+    border: 2px solid #222222;
+}
+
+.modal a:hover{
+    color: white;
+    background-color: #222222;
+}
+
 @media screen and (max-width: 1050px) {
     .register-form {
         width: 40%;
@@ -664,6 +719,15 @@ input {
 
     .register-photo {
         display: none !important;
+    }
+
+    .modal h1{
+        font-size: 20px;
+    }
+
+    .modal p{
+        width: 80%;
+        font-size: 15px;
     }
 }
 
@@ -698,6 +762,15 @@ input {
     
         font-size: small;
         color: #fff;
+    }
+
+    .modal h1{
+        font-size: 15px;
+    }
+
+    .modal p{
+        font-size: 12px;
+        margin-bottom: 20px;
     }
 
 }
