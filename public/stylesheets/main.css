@@ -519,6 +519,7 @@ nav span {
 .register-container{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .register-form {
@@ -711,6 +712,15 @@ input {
         width: 60%;
     }
 
+    .modal h1{
+        font-size: 20px;
+    }
+
+    .modal p{
+        width: 80%;
+        font-size: 15px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -754,6 +764,15 @@ input {
     
         font-size: small;
         color: #fff;
+    }
+
+    .modal h1{
+        font-size: 15px;
+    }
+
+    .modal p{
+        font-size: 12px;
+        margin-bottom: 20px;
     }
 
 }
