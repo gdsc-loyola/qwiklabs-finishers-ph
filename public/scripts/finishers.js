@@ -21,7 +21,7 @@ function renderFinisher(finisher) {
    
     finisherImg.src = finisher.image;
     finisherName.src = finisher.name;
-    finisherCompletionDate.src = finisher.quests.completionDate;
+    //finisherCompletionDate.src = finisher.doc("finishers/quests");
 
     groups.appendChild(finisherMember);
 }
