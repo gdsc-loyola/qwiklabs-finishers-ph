@@ -19,7 +19,9 @@ function renderFinisher(finisher) {
     finisherGroupBody.classList.add("finisher-group-body");
     finisherMember.classList.add("finisher-member");
    
-    finisherImg.src = finishers.image;
+    finisherImg.src = finisher.image;
+    finisherName.src = finisher.name;
+    finisherCompletionDate.src = finisher.quests.completionDate;
 
     groups.appendChild(finisherMember);
 }
@@ -27,8 +29,8 @@ function renderFinisher(finisher) {
 // getting data
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        var quest = doc.data();
+        var finisher = doc.data();
         console.log(finisher);
-        renderQuest(finisher);
+        renderFinisher(finisher);
     });
 });
