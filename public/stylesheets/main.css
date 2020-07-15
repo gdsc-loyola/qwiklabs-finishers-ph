@@ -585,6 +585,7 @@ nav span {
 }
 
 .item input,
+.item select,
 .name-items input{
     display: block;
     background: transparent;
