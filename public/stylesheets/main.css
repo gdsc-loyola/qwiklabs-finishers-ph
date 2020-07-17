@@ -785,6 +785,7 @@ input {
 }
 
 .header-container {
+  padding-top: 5%;
   width: 100%;
   overflow: auto;
   font-family: Google Sans, sans-serif;
