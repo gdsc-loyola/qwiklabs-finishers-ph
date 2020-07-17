@@ -1,7 +1,7 @@
 // Firestore >> finishers.html
 
 // rendering function
-const groups = document.querySelector(".finisher-groups");
+const groups = document.querySelector(".finisher-group");
 
 function renderFinisher(finisher) {
     //NOTE: Doesn't include finished quests, only rendering the finisher themself
@@ -9,21 +9,22 @@ function renderFinisher(finisher) {
     let finisherMember = document.createElement('div');
     let finisherImg = document.createElement('img');
     let finisherName = document.createElement('h5');
-    let finisherCompletionDate = document.createElement('p');
+    //let finisherCompletionDate = document.createElement('p');
 
-    finisherGroupBody.appendChild (finisherMember);
-    finisherMember.appendChild (finisherImg);
+    finisherGroupBody.appendChild(finisherMember);
+    finisherMember.appendChild(finisherImg);
     finisherMember.appendChild(finisherName);
-    finisherMember.appendChild (finisherCompletionDate);
+   
+    //finisherMember.appendChild(finisherCompletionDate);
 
     finisherGroupBody.classList.add("finisher-group-body");
     finisherMember.classList.add("finisher-member");
    
     finisherImg.src = finisher.image;
-    finisherName.src = finisher.name;
+    finisherName.textContent = finisher.Name;
     //finisherCompletionDate.src = finisher.doc("finishers/quests");
 
-    groups.appendChild(finisherMember);
+    groups.appendChild(finisherGroupBody);
 }
 
 // getting data
