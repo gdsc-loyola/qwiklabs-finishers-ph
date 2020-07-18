@@ -770,6 +770,7 @@ input {
 }
 
 .header-container {
+  padding-top: 5%;
   width: 100%;
   overflow: auto;
   font-family: Google Sans, sans-serif;
@@ -1173,6 +1174,9 @@ margin-top: 0;
 
     .finisher-group-header-lowerbtn{
         display: flex;
+    }
+    .header-container {
+        padding-top:10%;
     }
 }
 
