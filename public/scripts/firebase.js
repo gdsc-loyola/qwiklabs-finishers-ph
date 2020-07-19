@@ -1,4 +1,5 @@
-import * from 'firebase';
+//import * from 'firebase';
+
 const firebaseConfig = {
     apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
     authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
@@ -13,5 +14,8 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-const db = firebase.firestore();
-var storageRef = firebase.storage();
+//const db = firebase.firestore();
+
+// Create a root reference
+let storageRef = firebase.storage().ref;
+module.export (storageRef);

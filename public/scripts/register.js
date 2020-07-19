@@ -1,7 +1,5 @@
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-
+//require("firebase/firestore");
+//const {storageRef, db, firebase } = require('./scripts/firebase.js');
 const name = document.getElementById('full-name');
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
@@ -11,16 +9,10 @@ const submitBtn = document.getElementById('submit-btn');
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
 
-
 var image = document.getElementById("finisher-img");
 
-// Create a root reference
-var storageRef = firebase.storage().ref("finishers-imgs");
-
-// Create a reference to 'mountains.jpg'
 var imgRef = storageRef.child(image);
 
-// Create a reference to 'images/mountains.jpg'
 var finisherRef = storageRef.child('finishers-imgs/'+name.value);
 
 // Validation of input
