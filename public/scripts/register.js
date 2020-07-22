@@ -1,6 +1,6 @@
 
 //const {storageRef, db, firebase } = require('./scripts/firebase.js');
-const name = document.getElementById('fullName');
+const name = document.getElementById("fullName");
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
 //const link = document.getElementById('link');
@@ -12,7 +12,7 @@ var registerContainer = document.querySelector('.register-container');
 const db = firebase.firestore();
 
 var storageRef = firebase.storage().ref('finishers_imgs/');
-var imgRef = storageRef.child("finisher");
+
 
 
 // Validation of input
@@ -38,6 +38,7 @@ var imgRef = storageRef.child("finisher");
         }*/
 
 fileUpload.addEventListener("change", function(evt) {
+  var imgRef = storageRef.child(name.value);
   var firstFile = evt.target.files[0]; // get the first file uploaded
   var uploadTask = imgRef.put(firstFile);
   uploadTask.on('state_changed', 
@@ -51,17 +52,16 @@ fileUpload.addEventListener("change", function(evt) {
               
     }
             
-    );   
-});
+    ); 
+  });
         
 submitBtn.addEventListener('click', (e) => {
 
+  var imgRef = storageRef.child(name.value);
   e.preventDefault();
 
-  
-
   if (confirm("Confirm?")) {
-
+    
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
     
@@ -79,6 +79,9 @@ submitBtn.addEventListener('click', (e) => {
       console.error("Error writing document: ", error);
     });
 
+    
+
   }
 
+  
 });
