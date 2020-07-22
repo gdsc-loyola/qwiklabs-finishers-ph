@@ -1,19 +1,20 @@
-//require("firebase/firestore");
+
 //const {storageRef, db, firebase } = require('./scripts/firebase.js');
 const name = document.getElementById('full-name');
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
 //const link = document.getElementById('link');
 const submitBtn = document.getElementById('submit-btn');
-
+var fileUpload = document.getElementById('finisher-img')
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
 
-var image = document.getElementById("finisher-img");
+const db = firebase.firestore();
 
-var imgRef = storageRef.child(image);
+var storeRef = firebase.storage().ref('finishers-imgs/'+name.value);
+var imgRef = storeRef.child(fileUpload);
 
-var finisherRef = storageRef.child('finishers-imgs/'+name.value);
+
 
 // Validation of input
 /*var proceed=false;
@@ -46,19 +47,30 @@ submitBtn.addEventListener('click', (e) => {
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
     
-    fileUpload.on("change", function(evt) {
+    fileUpload.addEventListener("change", function(evt) {
       var firstFile = evt.target.file[0]; // get the first file uploaded
-      var uploadTask = storageRef.put(firstFile);
-      uploadTask.on("state_changed", function progress(snapshot) {
-      console.log(snapshot.totalBytesTransferred); // progress of upload
-      });
-    });
+      var uploadTask = storeRef.put(firstFile);
+      uploadTask.on('state_changed', 
+        function progress(snapshot) {
+          console.log(snapshot.totalBytesTransferred); // progress of upload
+        },
+        function error(err) {
 
+        },
+        function complete() {
+          
+        }
+        
+      );    
+
+    });
+    
     db.collection("finishers").add({
+      
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: imgRef.fullPath
+      image: storeRef.fullpath
     })
     .then(function() {
       console.log("Document successfully written!");
@@ -66,6 +78,7 @@ submitBtn.addEventListener('click', (e) => {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
+
   }
 
 });
