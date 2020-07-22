@@ -11,8 +11,8 @@ var registerContainer = document.querySelector('.register-container');
 
 const db = firebase.firestore();
 
-var storeRef = firebase.storage().ref('finishers-imgs/'+name.value);
-var imgRef = storeRef.child(fileUpload);
+var storeRef = firebase.storage().ref('finishers-imgs/');
+var imgRef = storeRef.child(name.value);
 
 
 
@@ -42,35 +42,34 @@ submitBtn.addEventListener('click', (e) => {
 
   e.preventDefault();
 
+  fileUpload.addEventListener("change", function(evt) {
+    var firstFile = evt.target.file[0]; // get the first file uploaded
+    var uploadTask = storeRef.put(firstFile);
+    uploadTask.on('state_changed', 
+      function progress(snapshot) {
+        console.log(snapshot.totalBytesTransferred); // progress of upload
+      },
+      function error(err) {
+
+      },
+      function complete() {
+        
+      }
+      
+    );    
+  });
+
   if (confirm("Confirm?")) {
 
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
-    
-    fileUpload.addEventListener("change", function(evt) {
-      var firstFile = evt.target.file[0]; // get the first file uploaded
-      var uploadTask = storeRef.put(firstFile);
-      uploadTask.on('state_changed', 
-        function progress(snapshot) {
-          console.log(snapshot.totalBytesTransferred); // progress of upload
-        },
-        function error(err) {
-
-        },
-        function complete() {
-          
-        }
-        
-      );    
-
-    });
     
     db.collection("finishers").add({
       
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: storeRef.fullpath
+      image: storeRef+"/"+name.value
     })
     .then(function() {
       console.log("Document successfully written!");

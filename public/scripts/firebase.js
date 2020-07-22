@@ -17,5 +17,5 @@ firebase.analytics();
 //const db = firebase.firestore();
 
 // Create a root reference
-const storageRef = firestore.storage().ref;
+//const storageRef = firebase.storage().ref();
 //module.export (storageRef);
