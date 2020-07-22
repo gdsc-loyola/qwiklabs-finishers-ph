@@ -1,6 +1,6 @@
 
 //const {storageRef, db, firebase } = require('./scripts/firebase.js');
-const name = document.getElementById('full-name');
+const name = document.getElementById('fullName');
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
 //const link = document.getElementById('link');
@@ -11,9 +11,8 @@ var registerContainer = document.querySelector('.register-container');
 
 const db = firebase.firestore();
 
-var storeRef = firebase.storage().ref('finishers-imgs/');
-var imgRef = storeRef.child(name.value);
-
+var storageRef = firebase.storage().ref('finishers_imgs/');
+var imgRef = storageRef.child("finisher");
 
 
 // Validation of input
@@ -37,27 +36,29 @@ var imgRef = storeRef.child(name.value);
         }   
           
         }*/
+
+fileUpload.addEventListener("change", function(evt) {
+  var firstFile = evt.target.files[0]; // get the first file uploaded
+  var uploadTask = imgRef.put(firstFile);
+  uploadTask.on('state_changed', 
+    function progress(snapshot) {
+      console.log(snapshot.totalBytesTransferred); // progress of upload
+    },
+    function error(err) {
+      
+    },
+    function complete() {
+              
+    }
+            
+    );   
+});
         
 submitBtn.addEventListener('click', (e) => {
 
   e.preventDefault();
 
-  fileUpload.addEventListener("change", function(evt) {
-    var firstFile = evt.target.file[0]; // get the first file uploaded
-    var uploadTask = storeRef.put(firstFile);
-    uploadTask.on('state_changed', 
-      function progress(snapshot) {
-        console.log(snapshot.totalBytesTransferred); // progress of upload
-      },
-      function error(err) {
-
-      },
-      function complete() {
-        
-      }
-      
-    );    
-  });
+  
 
   if (confirm("Confirm?")) {
 
@@ -69,7 +70,7 @@ submitBtn.addEventListener('click', (e) => {
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: storeRef+"/"+name.value
+      image: imgRef.fullPath
     })
     .then(function() {
       console.log("Document successfully written!");
