@@ -519,6 +519,7 @@ nav span {
 .register-container{
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .register-form {
@@ -569,22 +570,7 @@ nav span {
     margin: 10px 0;
 }
 
-.name-items{
-    display: flex;
-}
-
-.name-item-1,
-.name-item-2 {
-    width: 50%;
-    position: relative;
-}
-
-.name-item-1 {
-    padding-right: 50px;
-}
-
-.item input,
-.name-items input{
+.item input {
     display: block;
     background: transparent;
     font-size: 14px;
@@ -647,12 +633,77 @@ input {
     flex-direction: row;
 }
 
+.modal{
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 20vh;
+    left: 17.5vw;
+    width: 65%;
+    padding: 50px 0;
+    background-color: white;
+    border-top: 16px solid #48D08F ;
+    z-index: 500;
+}
+
+.modal h1{
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #222222;
+    margin: 20px 0;
+}
+
+.modal p{
+    width: 60%;
+    margin-bottom: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #222222;
+}
+
+.modal a{
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 2.5vw;
+    letter-spacing: 0.02em;
+    color: #222222;
+    padding: 10px;
+    border: 2px solid #222222;
+}
+
+.modal a:hover{
+    color: white;
+    background-color: #222222;
+}
+
 @media screen and (max-width: 1050px) {
     .register-form {
         width: 40%;
     }
     .register-photo {
         width: 60%;
+    }
+
+    .modal h1{
+        font-size: 20px;
+    }
+
+    .modal p{
+        width: 80%;
+        font-size: 15px;
     }
 
 }
@@ -700,6 +751,15 @@ input {
         color: #fff;
     }
 
+    .modal h1{
+        font-size: 15px;
+    }
+
+    .modal p{
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
 }
 /*FOR QUESTS*/
 
@@ -710,6 +770,7 @@ input {
 }
 
 .header-container {
+  padding-top: 5%;
   width: 100%;
   overflow: auto;
   font-family: Google Sans, sans-serif;
@@ -1113,6 +1174,9 @@ margin-top: 0;
 
     .finisher-group-header-lowerbtn{
         display: flex;
+    }
+    .header-container {
+        padding-top:10%;
     }
 }
 
