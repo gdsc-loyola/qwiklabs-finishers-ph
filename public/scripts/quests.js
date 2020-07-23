@@ -89,7 +89,9 @@ function renderQuest(quest) {
     stepsImg.src = "./assets/images/vectors/steps.png";
     stepsDataSpan.textContent = String(quest.steps);
     stepsSpan.textContent = " steps";
-    cardBtnHolderForm.action = "https://www.qwiklabs.com";
+    //add quest index in firebase, links to specific quests based on quest index
+    cardBtnHolderForm.target="_blank";
+    cardBtnHolderForm.action = "https://www.qwiklabs.com/quests/" + quest.index ;
     cardBtnHolderButton.type = "submit";
     cardBtnHolderButton.textContent = "Learn More";
 
