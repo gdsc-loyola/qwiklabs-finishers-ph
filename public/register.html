@@ -17,7 +17,12 @@
   <link rel="stylesheet" href="./stylesheets/normalize.css" />
   <link rel="stylesheet" href="./stylesheets/main.css" />
 
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+  
   <title>Register | Qwiklabs Finishers PH</title>
+
 </head>
 
 <body>
@@ -30,9 +35,9 @@
       </div>
 
       <div class="navigation-secondary">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="quests.html">Quests</a>
-        <a href="#">Finishers</a>
+        <a href="finishers.html">Finishers</a>
         <a href="register.html">
           <button id="regBtn">Register</button>
         </a>
@@ -53,15 +58,10 @@
           <h1>Register</h1>
           <div class="alert">Message Sent</div>
           <p>Fill in the required information for you to be showcased on our website.</p><br>
-          <div class="name-items">
-            <div class="name-item-1">
-              <p>First Name</p>
-              <input type="text" id="first-name" placeholder="ex. Juan" value="" />
-            </div>
-            <div class="name-item-2">
-              <p>Last Name</p>
-              <input type="text" id="last-name" placeholder="ex. de la Cruz" value="" />
-            </div>
+          <div class="item">
+            <p>Full Name</p>
+            <!--TO DO: Fix class names, changed first name + Last name to just Full name-->
+            <input type="text" id="fullName" placeholder="ex. Juan" value="" />     
           </div>
           <div class="item">
             <p>Quest Title</p>
@@ -71,14 +71,15 @@
             <p>Date of Completion</p>
             <input type="date" id="date" placeholder="Select the date of completion" value="" />
           </div>
-          <div class="item">
+          <!--<div class="item">
             <p>Qwiklabs Public Link</p>
             <input type="text" id="link" placeholder="https://www.qwiklabs.com/" value="" />
-          </div>
+          </div>-->
           <div class="item">
-            <p>Upload your Display Photo</p>
+            <p>Display Photo</p>
             <div class="upload">
-              <p><a href="#">Drop file</a> here or <a href="#">Select file</a></p>
+              <!--<label for img>Select File: </label>-->
+              <input type="file" id="finisher-img" name="finisher-img" accept="image/*" /> 
             </div>
           </div>
           <div>
@@ -100,7 +101,7 @@
         Our team will review the information you’ve submitted.
         You’ll receive a notification once your submission has been verified.
       </p>
-      <a href="#">Go to Home</a>
+      <a href="index.html">Go to Home</a>
     </div>
 
   </section>
@@ -112,10 +113,10 @@
         <span id="footer-finisher">FINISHERS</span>
       </div>
       <div class="footer-secondary">
-        <a href="#">Home</a>
-        <a href="#">Quests</a>
-        <a href="#">Finishers</a>
-        <a href="#">Register</a>
+        <a href="index.html">Home</a>
+        <a href="quests.html">Quests</a>
+        <a href="finishers.html">Finishers</a>
+        <a href="register.html">Register</a>
         <div class="reg-mobile">
           <h1>Showcase your <br> accomplishments</h1>
           <a href="register.html"><button>Register</button></a>
@@ -128,23 +129,17 @@
         <p>Copyright © 2020 All rights reserved</p>
       </div>
       <div class="login-container">
-        <a href="#" id="admin-login">Admin Log in</a>
+        <!--WIP-->
+        <a href="404.html" id="admin-login">Admin Log in</a>
       </div>
     </div>
   </footer>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.14.2/firebase-app.js"></script>
-  <script src="/__/firebase/7.14.2/firebase-database.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/7.14.2/firebase-analytics.js"></script>
-
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+  
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
   <script src="./scripts/register.js"></script>
+  
 
 </body>
 

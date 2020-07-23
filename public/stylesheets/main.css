@@ -570,22 +570,7 @@ nav span {
     margin: 10px 0;
 }
 
-.name-items{
-    display: flex;
-}
-
-.name-item-1,
-.name-item-2 {
-    width: 50%;
-    position: relative;
-}
-
-.name-item-1 {
-    padding-right: 50px;
-}
-
-.item input,
-.name-items input{
+.item input {
     display: block;
     background: transparent;
     font-size: 14px;
@@ -785,6 +770,7 @@ input {
 }
 
 .header-container {
+  padding-top: 5%;
   width: 100%;
   overflow: auto;
   font-family: Google Sans, sans-serif;
@@ -1188,6 +1174,9 @@ margin-top: 0;
 
     .finisher-group-header-lowerbtn{
         display: flex;
+    }
+    .header-container {
+        padding-top:10%;
     }
 }
 
