@@ -18,6 +18,29 @@
   <link rel="stylesheet" href="stylesheets/normalize.css" />
   <link rel="stylesheet" href="stylesheets/main.css" />
 
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
+      authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
+      databaseURL: "https://qwiklabs-finishers-ph-e7667.firebaseio.com",
+      projectId: "qwiklabs-finishers-ph-e7667",
+      storageBucket: "qwiklabs-finishers-ph-e7667.appspot.com",
+      messagingSenderId: "763693016310",
+      appId: "1:763693016310:web:aba46f96591e70c1bb38d7",
+      measurementId: "G-QFLCCKXFQH"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); 
+  </script>
+
   <title>Home | Qwiklabs Finishers PH</title>
 
 </head>
@@ -360,21 +383,7 @@
       </div>
     </div>
   </footer>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/7.11.0/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-analytics.js"></script>
-  <script src="/__/firebase/7.16.1/firebase-firestore.js"></script>
-  <script src="/__/firebase/7.16.1/firebase-functions.js"></script>
-  <script src="/__/firebase/7.16.1/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
-
+    
   <script src='scripts/index.js'></script>
 
 </body>

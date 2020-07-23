@@ -21,6 +21,28 @@
     <link rel="stylesheet" href="./stylesheets/main.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
+        authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
+        databaseURL: "https://qwiklabs-finishers-ph-e7667.firebaseio.com",
+        projectId: "qwiklabs-finishers-ph-e7667",
+        storageBucket: "qwiklabs-finishers-ph-e7667.appspot.com",
+        messagingSenderId: "763693016310",
+        appId: "1:763693016310:web:aba46f96591e70c1bb38d7",
+        measurementId: "G-QFLCCKXFQH"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+    </script>  
+    
     <title>Home | Qwiklabs Finishers PH</title>
   </head>
 
@@ -61,204 +83,7 @@
             </div>
         </div>
         <ul class="cards">
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/stackdriver_logging.png" alt="Stackdriver logging badge"></div>
-              <div class="card-content">
-                <div class="card-title">Stackdriver Logging</div>
-                <table class="card-text">
-                  <tr>
-                    <td><i class="material-icons card-icon">bar_chart</i>Fundamental</td>
-                    <td><i class="material-icons card-icon">timelapse</i>5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><i class="material-icons card-icon">monetization_on</i>23 credits</td>
-                    <td><i class="material-icons card-icon">beenhere</i>5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/gcp_essentials.png" alt="GCP Essentials badge"></div>
-              <div class="card-content">
-                <div class="card-title">GCP Essentials</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Credits icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/baseline.png" alt="Baseline badge"></div>
-              <div class="card-content">
-                <div class="card-title">Baseline: Data, ML, AI</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image">
-                <img src="./assets/images/bigquery.png" alt="BigQuery badge"> 
-              </div>
-              <div class="card-content">
-                <div class="card-title">BigQuery Basics for Data Analysts</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-          <ul class="cards">
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/stackdriver_logging.png" alt="Stackdriver logging badge"></div>
-              <div class="card-content">
-                <div class="card-title">Stackdriver Logging</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/gcp_essentials.png" alt="GCP Essentials badge"></div>
-              <div class="card-content">
-                <div class="card-title">GCP Essentials</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image"><img src="./assets/images/baseline.png" alt="Baseline badge"></div>
-              <div class="card-content">
-                <div class="card-title">Baseline: Data, ML, AI</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
-          <li class="cards-item">
-            <div class="card">
-              <header class="card-topbar"></header>
-              <div class="card-image">
-                <img src="./assets/images/bigquery.png" alt ="BigQuery badge"/> 
-              </div>
-              <div class="card-content">
-                <div class="card-title">BigQuery Basics for Data Analysts</div>
-                <table class="card-text">
-                  <tr>
-                    <td><img src="./assets/images/vectors/level.png" class="card-icon" alt="Level icon">Fundamental</td>
-                    <td><img src="./assets/images/vectors/hours.png" class="card-icon" alt="Hours icon">5 hours</td>
-                  </tr>
-                  <tr>
-                    <td><img src="./assets/images/vectors/credits.png" class="card-icon" alt="Credits icon">23 credits</td>
-                    <td><img src="./assets/images/vectors/steps.png" class="card-icon" alt="Steps icon">5 steps</td>
-                  </tr>
-                  </table>
-                  <div class="card-btn-holder">
-                    <form action="https://www.qwiklabs.com">
-                      <button type="submit" class="card-btn">Learn more</button>
-                    </form>
-                  </div>
-              </div>
-            </div>
-          </li>
+          <!-- data from firestore -->
         </ul>
       </div>
     </section>
@@ -291,15 +116,12 @@
         </div>
       </div>
     </footer>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/7.11.0/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/7.11.0/firebase-analytics.js"></script>
 
+    <script src="./scripts/quests.js"></script>
     <!-- Initialize Firebase -->
     <script src="/__/firebase/init.js"></script>
     <script src="./scripts/index.js"></script>
+
   </body>
 </html>
