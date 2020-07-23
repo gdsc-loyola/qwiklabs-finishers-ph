@@ -33,7 +33,7 @@ function renderFinisher(finisher) {
     finisherMember.classList.add("finisher-member");
    
     finisherName.textContent = finisher.name;
-    finisherCompletionDate.textContent = moment(finisher.completionDate).format('MMM DD, YYYY');
+    finisherCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
 
     // Create a reference to the file we want to download
