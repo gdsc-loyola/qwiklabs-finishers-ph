@@ -65,7 +65,7 @@ function renderQuest(quest) {
     cardsItem.classList.add("cards-item");
     card.classList.add("card");
     cardTopbar.classList.add("card-topbar");
-    cardImage.classList.add("card-image");
+    cardImage.classList.add("quest-badge");
     cardContent.classList.add("card-content");
     cardTitle.classList.add("card-title")
     cardText.classList.add("card-text");
@@ -77,9 +77,10 @@ function renderQuest(quest) {
     cardBtnHolderButton.classList.add("card-btn");
 
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
-    var questRef = gsReference.child(quest.index);
+    var questRef = gsReference.child(String(quest.index)+".png");
 
     questRef.getDownloadURL().then(function(url) {
+        console.log(url);
         cardImageImg.src = url;
     })
     
