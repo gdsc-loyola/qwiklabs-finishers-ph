@@ -41,6 +41,7 @@ function renderFinisher(finisher) {
     //const img = Object.values(finisher).filter(data => finisherRef === data.ref)
     //Get the download URL
     finisherRef.getDownloadURL().then(function(url) {
+        console.log(url);
         finisherImg.src = url;
     })
 
