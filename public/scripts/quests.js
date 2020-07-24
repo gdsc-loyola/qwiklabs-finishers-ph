@@ -77,7 +77,7 @@ function renderQuest(quest) {
     cardBtnHolderButton.classList.add("card-btn");
 
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
-    var questRef = gsReference.child(quest.name);
+    var questRef = gsReference.child(quest.index);
 
     questRef.getDownloadURL().then(function(url) {
         cardImageImg.src = url;
