@@ -65,7 +65,7 @@ function renderQuest(quest) {
     cardsItem.classList.add("cards-item");
     card.classList.add("card");
     cardTopbar.classList.add("card-topbar");
-    cardImage.classList.add("quest-badge");
+    cardImage.classList.add("card-image");
     cardContent.classList.add("card-content");
     cardTitle.classList.add("card-title")
     cardText.classList.add("card-text");

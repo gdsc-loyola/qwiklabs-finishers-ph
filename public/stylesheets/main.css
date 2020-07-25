@@ -839,6 +839,7 @@ input {
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
+
 .card-content {
   display: flex;
   justify-content: space-between;
@@ -848,14 +849,6 @@ input {
   padding-left: 25px;
 }
 
-.quest-badge img{
-  display: block;
-  margin-top: 20px;
-  margin-left: 25px;
-  margin-bottom: 0;
-  max-height: 96px;
-  max-width: 87px;
-}
 
 .card-image {
   display: block;
@@ -863,6 +856,11 @@ input {
   margin-left: 25px;
   margin-bottom: 0;
 }
+
+.card-image img:first-of-type {
+    max-height: 96px;
+    max-width: 87px;
+  }
 
 .card-title {
 margin-top: 0;
