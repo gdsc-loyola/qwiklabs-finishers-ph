@@ -76,7 +76,14 @@ function renderQuest(quest) {
     cardBtnHolder.classList.add("card-btn-holder");
     cardBtnHolderButton.classList.add("card-btn");
 
-    cardImageImg.src = quest.image;
+    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
+    var questRef = gsReference.child(String(quest.index)+".png");
+
+    questRef.getDownloadURL().then(function(url) {
+        console.log(url);
+        cardImageImg.src = url;
+    })
+    
     cardTitle.textContent = quest.name;
     levelImg.src = "./assets/images/vectors/level.png";
     levelSpan.textContent = quest.level;
