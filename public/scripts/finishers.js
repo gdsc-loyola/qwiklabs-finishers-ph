@@ -53,9 +53,14 @@ function renderFinisher(finisher) {
 function finisherSearch () {
     var input, filter, txtValue;
     input = document.getElementById('filterSearch');
-    filter = input.value.toUpperCase();
-    txtValue = "Franz";
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        console.log("YAY");    
+    filter = input.value/*.toUpperCase()*/;
+    var finisherMembers = document.getElementsByClassName("finisher-member");
+    for(var i = 0; i < finisherMembers.length; i++){
+        console.log(finisherMembers[i].textContent);
+        txtValue = finisherMembers[i].textContent;
+        if (txtValue.search(filter)>-1) {
+            console.log("YAY");    
+        }
     }
+    
 }
