@@ -587,6 +587,7 @@ nav span {
 .item input,
 .item select,
 .name-items input{
+
     display: block;
     background: transparent;
     font-size: 14px;
@@ -786,6 +787,7 @@ input {
 }
 
 .header-container {
+  padding-top: 5%;
   width: 100%;
   overflow: auto;
   font-family: Google Sans, sans-serif;
@@ -1070,6 +1072,7 @@ margin-top: 0;
     flex-direction: column;
     width: 18%;
     margin: 0 1% 20px;
+    padding: 5%;
 }
 
 .finisher-member img{
@@ -1189,6 +1192,9 @@ margin-top: 0;
 
     .finisher-group-header-lowerbtn{
         display: flex;
+    }
+    .header-container {
+        padding-top:10%;
     }
 }
 
