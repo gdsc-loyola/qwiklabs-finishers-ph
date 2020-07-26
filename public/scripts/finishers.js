@@ -56,9 +56,9 @@ function finisherSearch () {
     filter = input.value/*.toUpperCase()*/;
     var finisherMembers = document.getElementsByClassName("finisher-member");
     for(var i = 0; i < finisherMembers.length; i++){
-        console.log(finisherMembers[i].textContent);
+        console.log(finisherMembers[i]);
         txtValue = finisherMembers[i].textContent;
-        if (txtValue.search(filter)>-1) {
+        if (txtValue.search(new RegExp(filter, "i"))>-1) {
             console.log("YAY");    
         }
     }
