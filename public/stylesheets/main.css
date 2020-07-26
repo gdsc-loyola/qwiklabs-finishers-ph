@@ -570,7 +570,24 @@ nav span {
     margin: 10px 0;
 }
 
-.item input {
+.name-items{
+    display: flex;
+}
+
+.name-item-1,
+.name-item-2 {
+    width: 50%;
+    position: relative;
+}
+
+.name-item-1 {
+    padding-right: 50px;
+}
+
+.item input,
+.item select,
+.name-items input{
+
     display: block;
     background: transparent;
     font-size: 14px;
