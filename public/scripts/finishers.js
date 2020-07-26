@@ -8,9 +8,11 @@ const groups = document.querySelector(".finisher-group-body");
 // getting data
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
+
         var finisher = doc.data();
-        console.log(finisher);
-        renderFinisher(finisher);
+        
+            console.log(finisher);
+            renderFinisher(finisher);
         
     });
 });
@@ -46,4 +48,14 @@ function renderFinisher(finisher) {
     })
 
     groups.appendChild(finisherMember);
+}
+
+function finisherSearch () {
+    var input, filter, txtValue;
+    input = document.getElementById('filterSearch');
+    filter = input.value.toUpperCase();
+    txtValue = "Franz";
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        console.log("YAY");    
+    }
 }
