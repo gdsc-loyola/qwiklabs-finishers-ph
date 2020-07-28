@@ -1,7 +1,7 @@
 const finisherGroups = document.querySelector(".finisher-groups");
 const quests = document.querySelector('#quest-title');
 const dates = document.querySelector('#completionDate');
-
+var questsDict = []; 
 var storageRef = firebase.storage().ref('finishers_imgs/');
 
 function renderSelectQuest(quest) {
@@ -21,7 +21,8 @@ db.collection('quests').get().then(snapshot => {
     var quest = doc.data();
     console.log(quest);
     renderSelectQuest(quest); 
-    renderFinisherGroup(quest);   
+    renderFinisherGroup(quest); 
+    questsDict[quest.name]=quest.index;  
   });
 });
 
@@ -70,7 +71,7 @@ function renderFinisherGroup (quest) {
     finisherGroupHeaderButtonBottom.appendChild(viewMoreBottom);
     finisherGroupHeaderButtonBottom.appendChild(checkQuestBottom);
     
-    finisherGroupBody.id = quest.index;
+    finisherGroup.id = quest.index;
     finisherGroup.classList.add("finisher-group");
     finisherGroupHeader.classList.add("finisher-group-header");
     finisherGroupHeaderTitle.classList.add("finisher-group-header-title");
@@ -157,17 +158,17 @@ function finisherSearch () {
 function questSearch () {
     var input, filter, txtValue;
     input = document.getElementById('quest-title');
-    filter = input.value;
-    var finisherMembers = document.getElementsByClassName("finisher-member");
-    for(var i = 0; i < finisherMembers.length; i++){
-        console.log(finisherMembers[i]);
-        txtValue = finisherMembers[i].textContent;
+    filter = questsDict[input.value];
+    var finisherGroups = document.getElementsByClassName("finisher-group");
+    for(var i = 0; i < finisherGroups.length; i++){
+        console.log(finisherGroups[i].id);
+        txtValue = finisherGroups[i].id;
         if(filter!="View All") {
             if (txtValue.search(new RegExp(filter, "i"))>-1) {
-                finisherMembers[i].style.display = "";    
+                finisherGroups[i].style.display = "";    
             }
             else {
-                finisherMembers[i].style.display = "none"; 
+                finisherGroups[i].style.display = "none"; 
             }
         }
     }
