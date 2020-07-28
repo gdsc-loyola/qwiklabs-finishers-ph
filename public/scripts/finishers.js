@@ -1,39 +1,38 @@
 const finisherGroups = document.querySelector(".finisher-groups");
-const finisherGroupBody = document.querySelector(".finisher-group-body");
 const quests = document.querySelector('#quest-title');
 const dates = document.querySelector('#completionDate');
 
 var storageRef = firebase.storage().ref('finishers_imgs/');
 
-db.collection('quests').get().then(snapshot => {
-  snapshot.docs.forEach(doc => {
-      var quest = doc.data();
-      console.log(quest);
-      renderSelectQuest(quest); 
-      renderFinisherGroup(quest);   
-  });
-});
-
 function renderSelectQuest(quest) {
-  let questName = document.createElement('option');
-  questName.textContent = quest.name;
-  quests.appendChild(questName);
+    let questName = document.createElement('option');
+    questName.textContent = quest.name;
+    quests.appendChild(questName);
 }
-
-db.collection('finishers').get().then(snapshot => {
-    snapshot.docs.forEach(doc => {
-        var finisher = doc.data();
-        renderFinisher(finisher);
-        renderSelectCompletionDate(finisher); 
-    });
-});
 
 function renderSelectCompletionDate(finisher) {
     let questCompletionDate = document.createElement('option');
     questCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
-    console.log("Quest Completion Date: " + questCompletionDate);
     dates.appendChild(questCompletionDate);
-  }
+}
+
+db.collection('quests').get().then(snapshot => {
+  snapshot.docs.forEach(doc => {
+    var quest = doc.data();
+    console.log(quest);
+    renderSelectQuest(quest); 
+    renderFinisherGroup(quest);   
+  });
+});
+
+db.collection('finishers').get().then(snapshot => {
+    snapshot.docs.forEach(doc => {
+        var finisher = doc.data();
+        console.log(finisher);
+        renderFinisher(finisher);
+        renderSelectCompletionDate(finisher); 
+    });
+});
 
 function renderFinisherGroup (quest) {
     let finisherGroup = document.createElement('div');
@@ -71,6 +70,7 @@ function renderFinisherGroup (quest) {
     finisherGroupHeaderButtonBottom.appendChild(viewMoreBottom);
     finisherGroupHeaderButtonBottom.appendChild(checkQuestBottom);
     
+    finisherGroupBody.id = quest.index;
     finisherGroup.classList.add("finisher-group");
     finisherGroupHeader.classList.add("finisher-group-header");
     finisherGroupHeaderTitle.classList.add("finisher-group-header-title");
@@ -108,7 +108,9 @@ function renderFinisherGroup (quest) {
 }
 
 function renderFinisher(finisher) {
-    
+
+    var finisherGroupBody = document.getElementById(finisher.index);
+
     let finisherMember = document.createElement('div');
     let finisherImg = document.createElement('img');
     let finisherName = document.createElement('h5');
@@ -116,10 +118,10 @@ function renderFinisher(finisher) {
 
     finisherMember.appendChild(finisherImg);
     finisherMember.appendChild(finisherName);
-    finisherMember.appendChild(finisherCompletionDate);
-    
+    finisherMember.appendChild(finisherCompletionDate); 
+
     finisherMember.classList.add("finisher-member");
-   
+                
     finisherName.textContent = finisher.name;
     finisherCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
 
@@ -131,7 +133,8 @@ function renderFinisher(finisher) {
     finisherRef.getDownloadURL().then(function(url) {
         finisherImg.src = url;
     })
-    finisherGroupBody.appendChild(finisherMember);
+
+    finisherGroupBody.appendChild(finisherMember); 
 }
 
 function finisherSearch () {
@@ -188,3 +191,19 @@ function dateSearch () {
         }
     }
 }
+
+var filter, txtValue;
+    filter = document.getElementById('quest-title').value;
+    var finisherGroupss = document.getElementsByClassName("finisher-group");
+    for(var i = 0; i < finisherGroupss.length; i++){
+        console.log(finisherGroupss[i]);
+        var nodes = document.finisherGroupss[i].childNodes;
+        console.log(nodes);  
+        if (txtValue!=null) {
+            finisherGroupss[i].style.display = "";    
+        }
+        else {
+            finisherGroupss[i].style.display = "none"; 
+        }
+        
+    }

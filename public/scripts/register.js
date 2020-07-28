@@ -6,19 +6,20 @@ const submitBtn = document.getElementById('submit-btn');
 var fileUpload = document.getElementById('finisher-img')
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
-
+var questsDict = []; 
 var storageRef = firebase.storage().ref('finishers_imgs/');
-
+var questIndex;
 const quests = document.querySelector('#quest-title');
 
 db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
       var quest = doc.data();
-      console.log(quest);
       renderSelectQuest(quest);
+      questsDict[quest.name]=quest.index;
+      
   });
 });
-
+console.log(questsDict);
 function renderSelectQuest(quest) {
   let questName = document.createElement('option');
   questName.textContent = quest.name;
@@ -72,12 +73,16 @@ submitBtn.addEventListener('click', (e) => {
     
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
-    
+    console.log(questsDict);
+    console.log(questTitle);
+    console.log(questTitle.value);
+    console.log(questsDict[questTitle.value]);
     db.collection("finishers").add({
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: imgRef.fullPath
+      image: imgRef.fullPath,
+      index: questsDict[questTitle.value]
     })
     .then(function() {
       console.log("Document successfully written!");
