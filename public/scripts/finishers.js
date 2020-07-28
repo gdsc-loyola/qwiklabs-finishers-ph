@@ -2,6 +2,7 @@ const finisherGroups = document.querySelector(".finisher-groups");
 const quests = document.querySelector('#quest-title');
 const dates = document.querySelector('#completionDate');
 var questsDict = []; 
+var questsBodyDict = [];
 var storageRef = firebase.storage().ref('finishers_imgs/');
 
 function renderSelectQuest(quest) {
@@ -22,10 +23,11 @@ db.collection('quests').get().then(snapshot => {
     console.log(quest);
     renderSelectQuest(quest); 
     renderFinisherGroup(quest); 
-    questsDict[quest.name]=quest.index;  
+    questsDict[quest.name] = quest.index;  
+    questsBodyDict[quest.name] = quest.index+"body";
   });
 });
-
+console.log(questsBodyDict);
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var finisher = doc.data();
@@ -72,6 +74,7 @@ function renderFinisherGroup (quest) {
     finisherGroupHeaderButtonBottom.appendChild(checkQuestBottom);
     
     finisherGroup.id = quest.index;
+    finisherGroupBody.id = quest.index+"body";
     finisherGroup.classList.add("finisher-group");
     finisherGroupHeader.classList.add("finisher-group-header");
     finisherGroupHeaderTitle.classList.add("finisher-group-header-title");
@@ -109,8 +112,7 @@ function renderFinisherGroup (quest) {
 }
 
 function renderFinisher(finisher) {
-
-    var finisherGroupBody = document.getElementById(finisher.index);
+    var finisherGroup = document.getElementById(finisher.index+"body");
 
     let finisherMember = document.createElement('div');
     let finisherImg = document.createElement('img');
@@ -135,7 +137,7 @@ function renderFinisher(finisher) {
         finisherImg.src = url;
     })
 
-    finisherGroupBody.appendChild(finisherMember); 
+    finisherGroup.appendChild(finisherMember); 
 }
 
 function finisherSearch () {
