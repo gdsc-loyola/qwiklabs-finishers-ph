@@ -159,11 +159,13 @@ function questSearch () {
     for(var i = 0; i < finisherMembers.length; i++){
         console.log(finisherMembers[i]);
         txtValue = finisherMembers[i].textContent;
-        if (txtValue.search(new RegExp(filter, "i"))>-1) {
-            finisherMembers[i].style.display = "";    
-        }
-        else {
-            finisherMembers[i].style.display = "none"; 
+        if(filter!="View All") {
+            if (txtValue.search(new RegExp(filter, "i"))>-1) {
+                finisherMembers[i].style.display = "";    
+            }
+            else {
+                finisherMembers[i].style.display = "none"; 
+            }
         }
     }
 }
