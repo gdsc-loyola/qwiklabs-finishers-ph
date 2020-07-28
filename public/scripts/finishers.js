@@ -20,14 +20,13 @@ function renderSelectCompletionDate(finisher) {
 db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
     var quest = doc.data();
-    console.log(quest);
     renderSelectQuest(quest); 
     renderFinisherGroup(quest); 
     questsDict[quest.name] = quest.index;  
     questsBodyDict[quest.name] = quest.index+"body";
   });
 });
-console.log(questsBodyDict);
+
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var finisher = doc.data();
@@ -88,9 +87,8 @@ function renderFinisherGroup (quest) {
 
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
 
-    // Create a reference to the file we want to download
     var questRef = gsReference.child(String(quest.index)+".png");
-    //Get the download URL
+
     questRef.getDownloadURL().then(function(url) {
         questBadge.src = url;
     })
@@ -130,14 +128,19 @@ function renderFinisher(finisher) {
 
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
 
-    // Create a reference to the file we want to download
     var finisherRef = gsReference.child(finisher.name);
-    //Get the download URL
+    
     finisherRef.getDownloadURL().then(function(url) {
         finisherImg.src = url;
     })
 
     finisherGroup.appendChild(finisherMember); 
+}
+
+function filterSearch () {
+    finisherSearch ();
+    questSearch ();
+    dateSearch ();
 }
 
 function finisherSearch () {
@@ -146,15 +149,17 @@ function finisherSearch () {
     filter = input.value;
     var finisherMembers = document.getElementsByClassName("finisher-member");
     for(var i = 0; i < finisherMembers.length; i++){
-        console.log(finisherMembers[i]);
+
         txtValue = finisherMembers[i].textContent;
+
         if (txtValue.search(new RegExp(filter, "i"))>-1) {
-            finisherMembers[i].style.display = "";    
+            finisherMembers[i].style.display = "";
         }
         else {
             finisherMembers[i].style.display = "none"; 
         }
     }
+    
 }
 
 function questSearch () {
@@ -195,18 +200,17 @@ function dateSearch () {
     }
 }
 
-var filter, txtValue;
-    filter = document.getElementById('quest-title').value;
-    var finisherGroupss = document.getElementsByClassName("finisher-group");
-    for(var i = 0; i < finisherGroupss.length; i++){
-        console.log(finisherGroupss[i]);
-        var nodes = document.finisherGroupss[i].childNodes;
-        console.log(nodes);  
-        if (txtValue!=null) {
-            finisherGroupss[i].style.display = "";    
-        }
-        else {
-            finisherGroupss[i].style.display = "none"; 
-        }
+//WIP: Check if quest is null then either put it at the bottom, or display: none;
+// var finisherGroupss = document.getElementsByClassName("finisher-group");
+// for(var i = 0; i < finisherGroupss.length; i++){
+//     console.log(finisherGroupss[i]);
+//     var nodes = document.finisherGroupss[i].childNodes;
+//     console.log(nodes);  
+//     if("div" in finisherGroupss && "div" in finisherGroups.div && "finisher-group" in finisherGroupss.div){
+//         finisherGroupss[i].style.display = "";    
+//     }
+//     else {
+//         finisherGroupss[i].style.display = "none"; 
+//     }
         
-    }
+// }
