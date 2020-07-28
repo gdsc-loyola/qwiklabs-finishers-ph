@@ -59,7 +59,10 @@ function finisherSearch () {
         console.log(finisherMembers[i]);
         txtValue = finisherMembers[i].textContent;
         if (txtValue.search(new RegExp(filter, "i"))>-1) {
-            console.log("YAY");    
+            finisherMembers[i].style.display = "";    
+        }
+        else {
+            finisherMembers[i].style.display = "none"; 
         }
     }
     
