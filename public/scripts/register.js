@@ -9,10 +9,24 @@ var fileUpload = document.getElementById('finisher-img')
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
 
-const db = firebase.firestore();
-
 var storageRef = firebase.storage().ref('finishers_imgs/');
 
+const quests = document.querySelector('#quest-title');
+
+db.collection('quests').get().then(snapshot => {
+  snapshot.docs.forEach(doc => {
+      var quest = doc.data();
+      console.log(quest);
+      renderSelectQuest(quest);
+     
+  });
+});
+
+function renderSelectQuest(quest) {
+  let questName = document.createElement('option');
+  questName.textContent = quest.name;
+  quests.appendChild(questName);
+}
 
 
 // Validation of input
@@ -66,7 +80,6 @@ submitBtn.addEventListener('click', (e) => {
     registerContainer.style.filter = "brightness(70%)";
     
     db.collection("finishers").add({
-      
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,

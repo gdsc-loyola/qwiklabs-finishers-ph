@@ -18,10 +18,6 @@
   <link rel="stylesheet" href="stylesheets/normalize.css" />
   <link rel="stylesheet" href="stylesheets/main.css" />
 
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-
   <title>Home | Qwiklabs Finishers PH</title>
 
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
@@ -29,9 +25,7 @@
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
 
 </head>
-
   <body>
-
     <nav>
       <div class="text-container">
         <div class="navigation-primary">
@@ -110,12 +104,13 @@
                 <label for="name">Finisher's Name</label>
                 <input type="text" id="filterSearch" name="name" onkeyup="finisherSearch()" placeholder="ex. Juan Dela Cruz">
                 <label for="quest">Quest Title</label>
-                <select id="quest" name="quest">
-                    <option style="color: #C4C4C4" disabled selected hidden>Select a quest</option>
+                <select id="quest-title" name="quest-name">
+                    <option disabled selected hidden>Select a quest</option>
                 </select>
                 <label for="date">Date of Completion</label>
-                <select id="date" name="date">
-                    <option style="color: #C4C4C4" disabled selected hidden>Select a quest</option>
+                <select id="completionDate" onchange="dateSearch()" name="date">
+                    <option disabled selected hidden>Select a date</option>
+                    <option>View All</option>
                 </select>
             </div>
         </div>
