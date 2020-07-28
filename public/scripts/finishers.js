@@ -1,4 +1,5 @@
-const groups = document.querySelector(".finisher-group-body");
+const finisherGroups = document.querySelector(".finisher-groups");
+const finisherGroupBody = document.querySelector(".finisher-group-body");
 const quests = document.querySelector('#quest-title');
 const dates = document.querySelector('#completionDate');
 
@@ -8,7 +9,8 @@ db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
       var quest = doc.data();
       console.log(quest);
-      renderSelectQuest(quest);    
+      renderSelectQuest(quest); 
+      renderFinisherGroup(quest);   
   });
 });
 
@@ -32,6 +34,78 @@ function renderSelectCompletionDate(finisher) {
     console.log("Quest Completion Date: " + questCompletionDate);
     dates.appendChild(questCompletionDate);
   }
+
+function renderFinisherGroup (quest) {
+    let finisherGroup = document.createElement('div');
+
+    let finisherGroupHeader = document.createElement('div');
+    
+    let finisherGroupHeaderTitle = document.createElement('div');
+
+    let finisherGroupBody = document.createElement('div');
+
+    let questBadge = document.createElement('img');
+    let questTitle = document.createElement('h3');
+
+    let finisherGroupHeaderButtonTop = document.createElement('div');
+    let viewMoreTop = document.createElement('a');
+    let checkQuestTop = document.createElement('a');
+
+    let finisherGroupHeaderButtonBottom = document.createElement('div');
+    let viewMoreBottom = document.createElement('a');
+    let checkQuestBottom = document.createElement('a'); 
+
+    finisherGroup.appendChild(finisherGroupHeader);
+
+    finisherGroupHeader.appendChild(finisherGroupHeaderTitle);
+    finisherGroupHeader.appendChild(finisherGroupHeaderButtonTop);
+    finisherGroupHeaderTitle.appendChild(questBadge);
+    finisherGroupHeaderTitle.appendChild(questTitle);
+
+    finisherGroupHeaderButtonTop.appendChild(viewMoreTop);
+    finisherGroupHeaderButtonTop.appendChild(checkQuestTop);
+
+    finisherGroup.appendChild(finisherGroupBody);
+
+    finisherGroup.appendChild(finisherGroupHeaderButtonBottom);
+    finisherGroupHeaderButtonBottom.appendChild(viewMoreBottom);
+    finisherGroupHeaderButtonBottom.appendChild(checkQuestBottom);
+    
+    finisherGroup.classList.add("finisher-group");
+    finisherGroupHeader.classList.add("finisher-group-header");
+    finisherGroupHeaderTitle.classList.add("finisher-group-header-title");
+    finisherGroupHeaderButtonTop.classList.add("finisher-group-header-upperbtn");
+    finisherGroupBody.classList.add("finisher-group-body");
+    finisherGroupHeaderButtonBottom.classList.add("finisher-group-header-lowerbtn");
+    viewMoreTop.classList.add("finisher-btn-1");
+    checkQuestTop.classList.add("finisher-btn-2");
+    viewMoreBottom.classList.add("finisher-btn-1");
+    checkQuestBottom.classList.add("finisher-btn-2");
+
+    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
+
+    // Create a reference to the file we want to download
+    var questRef = gsReference.child(String(quest.index)+".png");
+    //Get the download URL
+    questRef.getDownloadURL().then(function(url) {
+        questBadge.src = url;
+    })
+
+    questTitle.textContent = quest.name;
+    viewMoreTop.href = "finisher_learn_more.html";
+    viewMoreTop.textContent = "View More";
+    checkQuestTop.target = "_blank";
+    checkQuestTop.href = "https://www.qwiklabs.com/quests/" + quest.index ;
+    checkQuestTop.textContent = "Check Quest";
+
+    viewMoreBottom.href = "finisher_learn_more.html";
+    viewMoreBottom.textContent = "View More";
+    checkQuestBottom.target = "_blank";
+    checkQuestBottom.href = "https://www.qwiklabs.com/quests/" + quest.index ;
+    checkQuestBottom.textContent = "Check Quest";
+
+    finisherGroups.appendChild(finisherGroup);
+}
 
 function renderFinisher(finisher) {
     
@@ -57,12 +131,29 @@ function renderFinisher(finisher) {
     finisherRef.getDownloadURL().then(function(url) {
         finisherImg.src = url;
     })
-    groups.appendChild(finisherMember);
+    finisherGroupBody.appendChild(finisherMember);
 }
 
 function finisherSearch () {
     var input, filter, txtValue;
     input = document.getElementById('filterSearch');
+    filter = input.value;
+    var finisherMembers = document.getElementsByClassName("finisher-member");
+    for(var i = 0; i < finisherMembers.length; i++){
+        console.log(finisherMembers[i]);
+        txtValue = finisherMembers[i].textContent;
+        if (txtValue.search(new RegExp(filter, "i"))>-1) {
+            finisherMembers[i].style.display = "";    
+        }
+        else {
+            finisherMembers[i].style.display = "none"; 
+        }
+    }
+}
+
+function questSearch () {
+    var input, filter, txtValue;
+    input = document.getElementById('quest-title');
     filter = input.value;
     var finisherMembers = document.getElementsByClassName("finisher-member");
     for(var i = 0; i < finisherMembers.length; i++){

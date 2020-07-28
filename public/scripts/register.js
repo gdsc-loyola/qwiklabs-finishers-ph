@@ -1,9 +1,7 @@
 
-//const {storageRef, db, firebase } = require('./scripts/firebase.js');
 const name = document.getElementById("fullName");
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
-//const link = document.getElementById('link');
 const submitBtn = document.getElementById('submit-btn');
 var fileUpload = document.getElementById('finisher-img')
 var modal = document.querySelector('.modal');
@@ -18,7 +16,6 @@ db.collection('quests').get().then(snapshot => {
       var quest = doc.data();
       console.log(quest);
       renderSelectQuest(quest);
-     
   });
 });
 
@@ -27,7 +24,6 @@ function renderSelectQuest(quest) {
   questName.textContent = quest.name;
   quests.appendChild(questName);
 }
-
 
 // Validation of input
 /*var proceed=false;
@@ -64,9 +60,7 @@ fileUpload.addEventListener("change", function(evt) {
     },
     function complete() {
               
-    }
-            
-    ); 
+    }); 
   });
         
 submitBtn.addEventListener('click', (e) => {
@@ -91,10 +85,5 @@ submitBtn.addEventListener('click', (e) => {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
-
-    
-
   }
-
-  
 });
