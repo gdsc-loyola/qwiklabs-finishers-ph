@@ -1077,6 +1077,7 @@ margin-top: 0;
 
 .finisher-member img{
     width: 100px;
+    border-radius: 100%;
 }
 
 .finisher-member h5{
