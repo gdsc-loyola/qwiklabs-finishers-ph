@@ -1,6 +1,3 @@
-// Firestore >> quest.html
-
-// rendering function
 const cards = document.querySelector(".cards");
 
 function renderQuest(quest) {
@@ -89,7 +86,6 @@ function renderQuest(quest) {
     stepsImg.src = "./assets/images/vectors/steps.png";
     stepsDataSpan.textContent = String(quest.steps);
     stepsSpan.textContent = " steps";
-    //add quest index in firebase, links to specific quests based on quest index
     cardBtnHolderForm.target="_blank";
     cardBtnHolderForm.action = "https://www.qwiklabs.com/quests/" + quest.index ;
     cardBtnHolderButton.type = "submit";
@@ -98,7 +94,6 @@ function renderQuest(quest) {
     cards.appendChild(cardsItem);
 }
 
-// getting data
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var quest = doc.data();
