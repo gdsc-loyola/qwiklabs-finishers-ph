@@ -9,11 +9,11 @@ db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
     var quest = doc.data();
     var count = 0;
-
+    var finishers = 0;
     db.collection('finishers').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
             var finisher = doc.data();
-            if (finisher.index==quest.index&&count<1) {
+            if (finisher.index==quest.index && count < 1) {
                 renderSelectQuest(quest);
                 renderFinisherGroup(quest); 
                 questsDict[quest.name] = quest.index;  
@@ -22,9 +22,10 @@ db.collection('quests').get().then(snapshot => {
                 count ++;
                 
             }
-            if(finisher.index==quest.index) {
+            if(finisher.index==quest.index && finishers <= 10) {
                 renderFinisher(finisher);
                 renderSelectCompletionDate(finisher); 
+                finishers++;
             }
         }); 
     });
