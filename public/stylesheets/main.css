@@ -993,7 +993,7 @@ margin-top: 0;
 }
 
 .finisher-group-header-title img{
-    width: 50px;
+    width: 89px;
     margin: 0 20px;
 }
 
@@ -1084,6 +1084,7 @@ margin-top: 0;
 
 .finisher-member img{
     width: 100px;
+    border-radius: 100%;
 }
 
 .finisher-member h5{

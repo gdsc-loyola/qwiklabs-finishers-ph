@@ -1,5 +1,3 @@
-//import * from 'firebase';
-
 const firebaseConfig = {
     apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
     authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",

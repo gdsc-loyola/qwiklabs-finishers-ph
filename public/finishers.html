@@ -18,49 +18,28 @@
   <link rel="stylesheet" href="stylesheets/normalize.css" />
   <link rel="stylesheet" href="stylesheets/main.css" />
 
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-
   <title>Home | Qwiklabs Finishers PH</title>
 
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
 
-  <!--<script>
-    // Your web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
-        authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
-        databaseURL: "https://qwiklabs-finishers-ph-e7667.firebaseio.com",
-        projectId: "qwiklabs-finishers-ph-e7667",
-        storageBucket: "qwiklabs-finishers-ph-e7667.appspot.com",
-        messagingSenderId: "763693016310",
-        appId: "1:763693016310:web:aba46f96591e70c1bb38d7",
-        measurementId: "G-QFLCCKXFQH"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    const db = firebase.firestore();
-  </script>  -->
 </head>
-
   <body>
-
     <nav>
       <div class="text-container">
         <div class="navigation-primary">
-          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
-          <span>FINISHERS</span>
-          <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+            <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          </a>
         </div>
 
         <div class="navigation-secondary">
-          <a href="#">Home</a>
+          <a href="index.html">Home</a>
           <a href="quests.html">Quests</a>
-          <a href="#">Finishers</a>
+          <a href="finishers.html">Finishers</a>
           <a href="register.html">
 	          <button id="regBtn">Register</button>
 	        </a>
@@ -78,61 +57,25 @@
         <div class="finisher-page-header">
             <h1>Finishers</h1>
             <div class="finisher-page-search">
-                <input type="text" id="name" name="name" placeholder="Search for a quest or finisher">
+                <input type="text" id="nameSearch" name="nameSearch" placeholder="Search for a quest or finisher">
                 <img src="assets/images/vectors/search.png">
             </div>
         </div>
         <div class="finisher-content">
-            <div class="finisher-groups">
-                <div class="finisher-group">
-                    <div class="finisher-group-header">
-                        <div class="finisher-group-header-title">
-                            <img src="./assets/images/stackdriver_logging.png" alt="badge">
-                            <h3>Stackdriver Logging</h3>
-                        </div>
-                        <div class="finisher-group-header-upperbtn">
-                            <a href="finisher_learn_more.html" class="finisher-btn-1">View more</a>
-                            <a href="#" class="finisher-btn-2">Check quest</a>
-                        </div>
-                    </div>
-                    <div class="finisher-group-body"></div>
-                    <div class="finisher-group-header-lowerbtn">
-                        <a href="finisher_learn_more.html" class="finisher-btn-1">View more</a>
-                        <a href="#" class="finisher-btn-2">Check quest</a>
-                    </div>
-                </div>
-
-                <div class="finisher-group">
-                    <div class="finisher-group-header">
-                        <div class="finisher-group-header-title">
-                            <img src="./assets/images/gcp_essentials.png" alt="badge">
-                            <h3>GCP Essentials</h3>
-                        </div>
-                        <div class="finisher-group-header-upperbtn">
-                            <a href="finisher_learn_more.html" class="finisher-btn-1">View more</a>
-                            <a href="#" class="finisher-btn-2">Check quest</a>
-                        </div>
-                    </div>
-                    <div class="finisher-group-body">
-                      <div class="finisher-member"></div>
-                    </div>
-                    <div class="finisher-group-header-lowerbtn">
-                        <a href="finisher_learn_more.html" class="finisher-btn-1">View more</a>
-                        <a href="#" class="finisher-btn-2">Check quest</a>
-                    </div>
-                </div>
-            </div>
+            <div class="finisher-groups"></div>
             <div class="finisher-filter">
                 <h5>Filtered Search</h5>
                 <label for="name">Finisher's Name</label>
-                <input type="text" id="name" name="name" placeholder="ex. Juan Dela Cruz">
+                <input type="text" id="filterSearch" name="name" onkeyup="finisherSearch()" placeholder="ex. Juan Dela Cruz">
                 <label for="quest">Quest Title</label>
-                <select id="quest" name="quest">
-                    <option style="color: #C4C4C4" disabled selected hidden>Select a quest</option>
+                <select id="quest-title" name="quest-name" onchange="questSearch()" >
+                    <option disabled selected hidden>Select a quest</option>
+                    <option>View All</option>
                 </select>
                 <label for="date">Date of Completion</label>
-                <select id="date" name="date">
-                    <option style="color: #C4C4C4" disabled selected hidden>Select a quest</option>
+                <select id="completionDate" name="date" onchange="dateSearch()" >
+                    <option disabled selected hidden>Select a date</option>
+                    <option>View All</option>
                 </select>
             </div>
         </div>
@@ -145,9 +88,9 @@
             <span id="footer-finisher">FINISHERS</span>
           </div>
           <div class="footer-secondary">
-            <a href="#">Home</a>
+            <a href="index.html">Home</a>
             <a href="quests.html">Quests</a>
-            <a href="#">Finishers</a>
+            <a href="finishers.html">Finishers</a>
             <a href="register.html">Register</a>
             <div class="reg-mobile">
               <h1>Showcase your <br> accomplishments</h1>
@@ -167,10 +110,11 @@
       </footer>
       
       <script src='scripts/index.js'></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
       <script src="./scripts/firebase.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
       <script src='scripts/finishers.js'></script>
+      
     </body>
     
 </html>
