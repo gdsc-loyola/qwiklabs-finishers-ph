@@ -145,8 +145,6 @@ function renderFinisher(finisher) {
         finisherImg.src = url;
     })
 
-    
-
     finisherGroup.appendChild(finisherMember); 
 }
 
