@@ -1,6 +1,6 @@
 // Burger Button
 
-var navSecondary = document.querySelector(".navigation-secondary");
+const navSecondary = document.querySelector(".navigation-secondary");
 
 window.addEventListener("resize", () => {
     if(window.innerWidth > 850){

@@ -3,18 +3,18 @@ const name = document.getElementById("fullName");
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
 const submitBtn = document.getElementById('submit-btn');
-var fileUpload = document.getElementById('finisher-img');
-var modal = document.querySelector('.modal');
-var registerContainer = document.querySelector('.register-container');
+const fileUpload = document.getElementById('finisher-img');
+const modal = document.querySelector('.modal');
+const registerContainer = document.querySelector('.register-container');
 
-var questsDict = []; 
-var storageRef = firebase.storage().ref('finishers_imgs/');
-var questIndex;
+const questsDict = []; 
+const storRef = storageRef.child('finishers_imgs/');
+const questIndex;
 const quests = document.querySelector('#quest-title');
 
 db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
-      var quest = doc.data();
+      let quest = doc.data();
       renderSelectQuest(quest);
       questsDict[quest.name]=quest.index;
       
@@ -51,10 +51,10 @@ function renderSelectQuest(quest) {
         }*/
 
 fileUpload.addEventListener("change", function(evt) {
-  var imgRef = storageRef.child(name.value);
+  let imgRef = storageRef.child(name.value);
   
   firstFile = evt.target.files[0]; // get the first file uploaded
-  var uploadTask = imgRef.put(firstFile);
+  let uploadTask = imgRef.put(firstFile);
   uploadTask.on('state_changed', 
   function progress(snapshot) {
     console.log(snapshot.totalBytesTransferred); // progress of upload
@@ -71,7 +71,7 @@ submitBtn.addEventListener('click', (e) => {
 
   console.log(fileUpload.value);
 
-  var imgRef = storageRef.child(name.value);
+  let imgRef = storeRef.child(name.value);
   e.preventDefault();
 
   if (confirm("Confirm?")) {
@@ -80,10 +80,10 @@ submitBtn.addEventListener('click', (e) => {
     registerContainer.style.filter = "brightness(70%)";
     
     if ( fileUpload.value == '') {
-      var path = "finishers-imgs/Waving_GREEN";
+      let path = "finishers-imgs/Waving_GREEN";
     }
     else {
-      var path = imgRef.fullPath;
+      let path = imgRef.fullPath;
     }
 
     db.collection("finishers").add({

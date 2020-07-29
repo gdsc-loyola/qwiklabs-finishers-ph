@@ -1048,6 +1048,7 @@ margin-top: 0;
 }
 
 .finisher-btn-1{
+    display: none;
     background: #222222;
     border: 1.5px solid #222222;
     box-sizing: border-box;

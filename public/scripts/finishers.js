@@ -1,18 +1,18 @@
 const finisherGroups = document.querySelector(".finisher-groups");
 const quests = document.querySelector('#quest-title');
 const dates = document.querySelector('#completionDate');
-var questsDict = []; 
-var questsBodyDict = [];
-var storageRef = firebase.storage().ref('finishers_imgs/');
+const questsDict = []; 
+const questsBodyDict = [];
+
 
 db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
-    var quest = doc.data();
-    var count = 0;
-    var finishers = 0;
+    let quest = doc.data();
+    let count = 0;
+    let finishers = 0;
     db.collection('finishers').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
-            var finisher = doc.data();
+            let finisher = doc.data();
             if (finisher.index==quest.index && count < 1) {
                 renderSelectQuest(quest);
                 renderFinisherGroup(quest); 
@@ -94,9 +94,11 @@ function renderFinisherGroup (quest) {
     viewMoreBottom.classList.add("finisher-btn-1");
     checkQuestBottom.classList.add("finisher-btn-2");
 
-    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
+    const gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
 
-    var questRef = gsReference.child(String(quest.index)+".png");
+    const questRef = gsReference.child(String(quest.index)+".png");
+
+    questBadge.alt = quest.name + "badge";
 
     questRef.getDownloadURL().then(function(url) {
         questBadge.src = url;
@@ -119,7 +121,7 @@ function renderFinisherGroup (quest) {
 }
 
 function renderFinisher(finisher) {
-    var finisherGroup = document.getElementById(finisher.index+"body");
+    let finisherGroup = document.getElementById(finisher.index+"body");
 
     let finisherMember = document.createElement('div');
     let finisherImg = document.createElement('img');
@@ -135,9 +137,12 @@ function renderFinisher(finisher) {
     finisherName.textContent = finisher.name;
     finisherCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
 
-    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
-    var finisherRef = gsReference.child(finisher.name);
-    var finisherRef = gsReference.child("Waving_GREEN.png");
+    let gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
+    let finisherRef = gsReference.child(finisher.name);
+
+    finisherImg.alt = finisher.name;
+
+    finisherRef = gsReference.child("Waving_GREEN.png");
     if (finisher.image !== "finishers-imgs/Waving_GREEN.png") {
         finisherRef = gsReference.child(finisher.name);
     }
@@ -155,11 +160,11 @@ function filterSearch () {
 }
 
 function finisherSearch () {
-    var input, filter, txtValue;
+    let input, filter, txtValue;
     input = document.getElementById('filterSearch');
     filter = input.value;
-    var finisherMembers = document.getElementsByClassName("finisher-member");
-    for(var i = 0; i < finisherMembers.length; i++){
+    let finisherMembers = document.getElementsByClassName("finisher-member");
+    for(let i = 0; i < finisherMembers.length; i++){
 
         txtValue = finisherMembers[i].textContent;
 
@@ -174,11 +179,11 @@ function finisherSearch () {
 }
 
 function questSearch () {
-    var input, filter, txtValue;
+    let input, filter, txtValue;
     input = document.getElementById('quest-title');
     filter = questsDict[input.value];
-    var finisherGroups = document.getElementsByClassName("finisher-group");
-    for(var i = 0; i < finisherGroups.length; i++){
+    let finisherGroups = document.getElementsByClassName("finisher-group");
+    for(let i = 0; i < finisherGroups.length; i++){
         console.log(finisherGroups[i].id);
         txtValue = finisherGroups[i].id;
         if(filter!="View All") {
@@ -193,11 +198,11 @@ function questSearch () {
 }
 
 function dateSearch () {
-    var input, filter, txtValue;
+    let input, filter, txtValue;
     input = document.getElementById('completionDate');
     filter = input.value;
-    var finisherMembers = document.getElementsByClassName("finisher-member");
-    for(var i = 0; i < finisherMembers.length; i++){
+    let finisherMembers = document.getElementsByClassName("finisher-member");
+    for(let i = 0; i < finisherMembers.length; i++){
         console.log(finisherMembers[i]);
         txtValue = finisherMembers[i].textContent;
         if(filter!="View All") {

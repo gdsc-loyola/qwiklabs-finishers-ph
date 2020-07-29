@@ -73,8 +73,8 @@ function renderQuest(quest) {
     cardBtnHolder.classList.add("card-btn-holder");
     cardBtnHolderButton.classList.add("card-btn");
 
-    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
-    var questRef = gsReference.child(String(quest.index)+".png");
+    const gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
+    let questRef = gsReference.child(String(quest.index)+".png");
 
     questRef.getDownloadURL().then(function(url) {
         console.log(url);
@@ -103,7 +103,7 @@ function renderQuest(quest) {
 
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        var quest = doc.data();
+        let quest = doc.data();
         console.log(quest);
         renderQuest(quest);
     });
