@@ -1,6 +1,3 @@
-// Firestore >> quest.html
-
-// rendering function
 const cards = document.querySelector(".cards");
 
 function renderQuest(quest) {
@@ -76,7 +73,14 @@ function renderQuest(quest) {
     cardBtnHolder.classList.add("card-btn-holder");
     cardBtnHolderButton.classList.add("card-btn");
 
-    cardImageImg.src = quest.image;
+    const gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/');
+    let questRef = gsReference.child(String(quest.index)+".png");
+
+    questRef.getDownloadURL().then(function(url) {
+        console.log(url);
+        cardImageImg.src = url;
+    })
+    
     cardTitle.textContent = quest.name;
     levelImg.src = "./assets/images/vectors/level.png";
     levelSpan.textContent = quest.level;
@@ -89,7 +93,6 @@ function renderQuest(quest) {
     stepsImg.src = "./assets/images/vectors/steps.png";
     stepsDataSpan.textContent = String(quest.steps);
     stepsSpan.textContent = " steps";
-    //add quest index in firebase, links to specific quests based on quest index
     cardBtnHolderForm.target="_blank";
     cardBtnHolderForm.action = "https://www.qwiklabs.com/quests/" + quest.index ;
     cardBtnHolderButton.type = "submit";
@@ -98,10 +101,9 @@ function renderQuest(quest) {
     cards.appendChild(cardsItem);
 }
 
-// getting data
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        var quest = doc.data();
+        let quest = doc.data();
         console.log(quest);
         renderQuest(quest);
     });

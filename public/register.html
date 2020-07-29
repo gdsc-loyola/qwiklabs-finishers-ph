@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./stylesheets/normalize.css" />
   <link rel="stylesheet" href="./stylesheets/main.css" />
-
+  
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
@@ -29,9 +29,11 @@
   <nav>
     <div class="text-container">
       <div class="navigation-primary">
-        <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
-        <span>FINISHERS</span>
-        <img src="assets/images/image 2.png" alt = "PH Icon"/>
+        <a href = index.html>
+          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+          <span>FINISHERS</span>
+          <img src="assets/images/image 2.png" alt = "PH Icon"/>
+        </a>
       </div>
 
       <div class="navigation-secondary">
@@ -50,7 +52,7 @@
       </div>
     </div>
   </nav>
-  <!--REGISTER-->
+
   <section id="register">
     <div class="register-container">
       <div class="register-form" id="register-form">
@@ -60,30 +62,21 @@
           <p>Fill in the required information for you to be showcased on our website.</p><br>
           <div class="item">
             <p>Full Name</p>
-            <!--TO DO: Fix class names, changed first name + Last name to just Full name-->
             <input type="text" id="fullName" placeholder="ex. Juan" value="" />     
           </div>
           <div class="item">
-            <!--TO DO: Change <p> into <label>-->
             <p>Quest Title</p>
-            <!--Changed from dropdown input into select-->
             <select id="quest-title" name="quest-name">
                 <option disabled selected hidden>Select a quest</option>
             </select>
-            <!--<input type="dropdown" id="quest-title" placeholder="Select a Quest" value="" />-->
           </div>
           <div class="item">
             <p>Date of Completion</p>
             <input type="date" id="date" placeholder="Select the date of completion" value="" />
           </div>
-          <!--<div class="item">
-            <p>Qwiklabs Public Link</p>
-            <input type="text" id="link" placeholder="https://www.qwiklabs.com/" value="" />
-          </div>-->
           <div class="item">
             <p>Display Photo</p>
             <div class="upload">
-              <!--<label for img>Select File: </label>-->
               <input type="file" id="finisher-img" name="finisher-img" accept="image/*" /> 
             </div>
           </div>
@@ -114,8 +107,10 @@
   <footer>
     <div class="footer-container">
       <div>
-        <img src="./assets/images/image 1.png" />
-        <span id="footer-finisher">FINISHERS</span>
+        <a href = index.html>
+          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+          <span>FINISHERS</span>
+        </a>
       </div>
       <div class="footer-secondary">
         <a href="index.html">Home</a>
@@ -140,9 +135,9 @@
     </div>
   </footer>
 
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
   <script src="./scripts/index.js"></script>
   <script src="./scripts/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
   <script src="./scripts/register.js"></script>
   
 

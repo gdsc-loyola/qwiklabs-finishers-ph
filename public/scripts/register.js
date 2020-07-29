@@ -1,32 +1,33 @@
 
-//const {storageRef, db, firebase } = require('./scripts/firebase.js');
 const name = document.getElementById("fullName");
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
-//const link = document.getElementById('link');
 const submitBtn = document.getElementById('submit-btn');
-var fileUpload = document.getElementById('finisher-img')
-var modal = document.querySelector('.modal');
-var registerContainer = document.querySelector('.register-container');
+const fileUpload = document.getElementById('finisher-img');
+const modal = document.querySelector('.modal');
+const registerContainer = document.querySelector('.register-container');
 
-var storageRef = firebase.storage().ref('finishers_imgs/');
+const questsDict = []; 
+const storeRef = storageRef.child('finishers_imgs/');
+let questIndex;
+let path;
 const quests = document.querySelector('#quest-title');
+
 db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
-      var quest = doc.data();
-      console.log(quest);
+      let quest = doc.data();
       renderSelectQuest(quest);
+      questsDict[quest.name]=quest.index;
       
   });
 });
-
+console.log(questsDict);
 function renderSelectQuest(quest) {
-  
+
   let questName = document.createElement('option');
   questName.textContent = quest.name;
   quests.appendChild(questName);
 }
-
 
 // Validation of input
 /*var proceed=false;
@@ -51,26 +52,27 @@ function renderSelectQuest(quest) {
         }*/
 
 fileUpload.addEventListener("change", function(evt) {
-  var imgRef = storageRef.child(name.value);
-  var firstFile = evt.target.files[0]; // get the first file uploaded
-  var uploadTask = imgRef.put(firstFile);
+  let imgRef = storageRef.child(name.value);
+  
+  firstFile = evt.target.files[0]; // get the first file uploaded
+  let uploadTask = imgRef.put(firstFile);
   uploadTask.on('state_changed', 
-    function progress(snapshot) {
-      console.log(snapshot.totalBytesTransferred); // progress of upload
-    },
-    function error(err) {
+  function progress(snapshot) {
+    console.log(snapshot.totalBytesTransferred); // progress of upload
+  },
+  function error(err) {
       
-    },
-    function complete() {
+  },
+  function complete() {
               
-    }
-            
-    ); 
-  });
+  }); 
+});
         
 submitBtn.addEventListener('click', (e) => {
 
-  var imgRef = storageRef.child(name.value);
+  console.log(fileUpload.value);
+
+  let imgRef = storeRef.child(name.value);
   e.preventDefault();
 
   if (confirm("Confirm?")) {
@@ -78,12 +80,19 @@ submitBtn.addEventListener('click', (e) => {
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
     
+    if ( fileUpload.value == '') {
+      path = "finishers-imgs/Waving_GREEN";
+    }
+    else {
+      path = imgRef.fullPath;
+    }
+
     db.collection("finishers").add({
-      
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: imgRef.fullPath
+      image: path,
+      index: questsDict[questTitle.value]
     })
     .then(function() {
       console.log("Document successfully written!");
@@ -91,10 +100,5 @@ submitBtn.addEventListener('click', (e) => {
     .catch(function(error) {
       console.error("Error writing document: ", error);
     });
-
-    
-
   }
-
-  
 });

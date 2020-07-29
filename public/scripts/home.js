@@ -76,9 +76,9 @@ function renderQuest(quest) {
     cardBtnHolder.classList.add("home-card-btn-holder");
     cardBtnHolderButton.classList.add("home-card-btn");
 
-    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
+    let gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/')
 
-    var questRef = gsReference.child(String(quest.index)+".png");
+    let questRef = gsReference.child(String(quest.index)+".png");
 
     questRef.getDownloadURL().then(function(url) {
         cardImageImg.src = url;
@@ -107,7 +107,7 @@ function renderQuest(quest) {
 // getting data
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        var quest = doc.data();
+        let quest = doc.data();
         if(quest.featured){
             console.log(quest);
             renderQuest(quest);
@@ -121,19 +121,19 @@ var finishers = 0;
 const collection = document.querySelector(".people-collection");
 
 function renderFinisher(finisher) {
-    var temp = document.getElementsByTagName("template")[0];
-    var clone = temp.content.cloneNode(true);
-    var image = clone.querySelector("img");
-    var name = clone.querySelector(".person-name")
-    var quest = clone.querySelector("#quest")
-    var completionDate = clone.querySelector("#completionDate")
+    let temp = document.getElementsByTagName("template")[0];
+    let clone = temp.content.cloneNode(true);
+    let image = clone.querySelector("img");
+    let name = clone.querySelector(".person-name")
+    let quest = clone.querySelector("#quest")
+    let completionDate = clone.querySelector("#completionDate")
     
-    var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
+    let gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
 
-    var finisherRef = gsReference.child(finisher.name);
+    let finisherRef = gsReference.child(finisher.name);
     image.alt = finisher.name;
     
-    var finisherRef = gsReference.child("Waving_GREEN.png");
+    finisherRef = gsReference.child("Waving_GREEN.png");
 
     if (finisher.image !== "finishers-imgs/Waving_GREEN.png") {
         finisherRef = gsReference.child(finisher.name);
@@ -153,7 +153,7 @@ function renderFinisher(finisher) {
 // getting data
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        var finisher = doc.data();
+        let finisher = doc.data();
         if (finishers <= 12 && finisher.latest) {
             console.log(finisher.latest);
             renderFinisher(finisher);

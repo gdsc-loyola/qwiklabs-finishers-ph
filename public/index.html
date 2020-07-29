@@ -21,27 +21,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  
-  <!--<script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
-      authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
-      databaseURL: "https://qwiklabs-finishers-ph-e7667.firebaseio.com",
-      projectId: "qwiklabs-finishers-ph-e7667",
-      storageBucket: "qwiklabs-finishers-ph-e7667.appspot.com",
-      messagingSenderId: "763693016310",
-      appId: "1:763693016310:web:aba46f96591e70c1bb38d7",
-      measurementId: "G-QFLCCKXFQH"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    const db = firebase.firestore();
-    db.settings({ timestampsInSnapshots: true }); 
-  </script>-->
 
   <title>Home | Qwiklabs Finishers PH</title>
 
@@ -52,9 +31,11 @@
     <nav>
       <div class="text-container">
         <div class="navigation-primary">
-          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
-          <span>FINISHERS</span>
-          <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+            <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          </a>
         </div>
 
         <div class="navigation-secondary">
@@ -74,7 +55,6 @@
       </div>
     </nav>
 
-  <!--HOME-HERO-->
   <section class="home-hero-container">
     <div class="text-content-group">
       <div>
@@ -88,23 +68,10 @@
         </a>
       </div>
     </div>
-    <div class="content-container">
-      <!-- <div class="text-content-group"></div> -->
-      <!-- <div>
-          <h1>Showcase your accomplishments</h1>
-          <p>
-            Now is your opportunity to show the world the variety of quests
-            you have finished with Qwiklabs.
-          </p>
-          <a href="register.html" class="link-holder">
-            <button>Register</button>
-          </a>
-        </div> -->
-    </div>
   </section>
 
   <section class="home-quest">
-    <h1>What are the latest quests?</h1>
+    <h1>Featured Quests</h1>
     <p>Check out what’s new with Qwiklabs.</p>
     <ul class="home-cards">
       <!-- quests from Firestore -->
@@ -116,13 +83,14 @@
   <section class="home-finishers-container">
     <div class="content-container">
       <div class="header-groupings">
-        <h1>Who are the latest finishers?</h1>
+        <h1>Featured Finishers</h1>
         <h2>
           Check out tech enthusiasts who were able to finish various Qwiklabs
           quests.
         </h2>
       </div>
       <div class="people-collection">
+
         <!-- Template rendering (data from Firebase) -->
         <template>
           <div class="people-collection-child">
@@ -138,6 +106,7 @@
         </template>
 
         <!-- Template -->
+
       </div>
       <div class="link-holder">
         <p><a href="finishers.html" id="view-more-link">View more</a></p>
@@ -148,8 +117,10 @@
   <footer>
     <div class="footer-container">
       <div>
-        <img src="assets/images/image 1.png" alt="Qwiklabs logo" />
-        <span id="footer-finisher">FINISHERS</span>
+        <a href = index.html>
+          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+          <span>FINISHERS</span>
+        </a>
       </div>
       <div class="footer-secondary">
         <a href="index.html">Home</a>
@@ -173,7 +144,10 @@
       </div>
     </div>
   </footer>
-  <script src='scripts/firebase.js'></script>    
+    
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src='scripts/firebase.js'></script>  
   <script src='scripts/index.js'></script>
   <script src='scripts/home.js'></script>
 

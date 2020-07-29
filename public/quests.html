@@ -24,24 +24,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-
-    <!--<script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyA0a6f7wUG2hZRXaZzOpOTIIeh98X3JHaM",
-        authDomain: "qwiklabs-finishers-ph-e7667.firebaseapp.com",
-        databaseURL: "https://qwiklabs-finishers-ph-e7667.firebaseio.com",
-        projectId: "qwiklabs-finishers-ph-e7667",
-        storageBucket: "qwiklabs-finishers-ph-e7667.appspot.com",
-        messagingSenderId: "763693016310",
-        appId: "1:763693016310:web:aba46f96591e70c1bb38d7",
-        measurementId: "G-QFLCCKXFQH"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-      const db = firebase.firestore();
-    </script>  -->
     
     <title>Home | Qwiklabs Finishers PH</title>
   </head>
@@ -50,9 +32,11 @@
     <nav>
       <div class="text-container">
         <div class="navigation-primary">
-          <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
-          <span>FINISHERS</span>
-          <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+            <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          </a>
         </div>
 
         <div class="navigation-secondary">
@@ -83,7 +67,6 @@
             </div>
         </div>
         <ul class="cards">
-          <!-- data from firestore -->
         </ul>
       </div>
     </section>
@@ -91,8 +74,10 @@
     <footer>
       <div class="footer-container">
         <div>
-          <img src="./assets/images/image 1.png" alt="Qwiklabs logo" />
-          <span id="footer-finisher">FINISHERS</span>
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+          </a>
         </div>
         <div class="footer-secondary">
           <a href="index.html">Home</a>
@@ -116,12 +101,9 @@
         </div>
       </div>
     </footer>
-
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>  
     <script src="./scripts/firebase.js"></script>
     <script src="./scripts/quests.js"></script>
-    <!-- Initialize Firebase 
-    <script src="/__/firebase/init.js"></script>-->
-
     <script src="./scripts/index.js"></script>
 
   </body>
