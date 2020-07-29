@@ -108,7 +108,7 @@ function renderQuest(quest) {
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var quest = doc.data();
-        if(quest.featured == true){
+        if(quest.featured){
             console.log(quest);
             renderQuest(quest);
         }
@@ -154,7 +154,8 @@ function renderFinisher(finisher) {
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var finisher = doc.data();
-        if (finishers <= 12) {
+        if (finishers <= 12 && finisher.latest) {
+            console.log(finisher.latest);
             renderFinisher(finisher);
             finishers ++;
         }
