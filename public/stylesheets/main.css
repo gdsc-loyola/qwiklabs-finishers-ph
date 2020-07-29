@@ -425,7 +425,7 @@ nav span {
     justify-content: start;
 }
 
-.people-collection-child img{
+.people-collection-child div img{
     width: 90px;
     height: 90px;
     border-radius: 100%;
@@ -524,13 +524,13 @@ nav span {
     }
     
     .people-collection-child div img {
-        width: 70%;
-        height: 70%;
+        width: 90px;
+        height: 90px;
         margin-right: 5px;
     }
 
     .person-info p {
-        margin-left: -12px;
+        margin-left: 12px;
     }
 }
 
