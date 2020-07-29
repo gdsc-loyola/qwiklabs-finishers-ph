@@ -832,7 +832,7 @@ input {
   height: 12px;
   background: #222222;
 }
- 
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(295px, 2fr));
@@ -842,7 +842,7 @@ input {
   padding: 25px;
   font-family: Google Sans, sans-serif;
 }
-
+ 
 .cards-item {
   padding: 1rem;
 }
@@ -856,6 +856,7 @@ input {
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
+
 .card-content {
   display: flex;
   justify-content: space-between;
@@ -865,12 +866,18 @@ input {
   padding-left: 25px;
 }
 
+
 .card-image {
   display: block;
   margin-top: 20px;
   margin-left: 25px;
   margin-bottom: 0;
 }
+
+.card-image img:first-of-type {
+    max-height: 96px;
+    max-width: 87px;
+  }
 
 .card-title {
 margin-top: 0;
