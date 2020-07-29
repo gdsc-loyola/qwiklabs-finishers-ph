@@ -9,7 +9,6 @@ db.collection('quests').get().then(snapshot => {
   snapshot.docs.forEach(doc => {
     var quest = doc.data();
     var count = 0;
-    var finishers = 0;
 
     db.collection('finishers').get().then(snapshot => {
         snapshot.docs.forEach(doc => {
@@ -208,18 +207,3 @@ function dateSearch () {
         }
     }
 }
-
-//WIP: Check if quest is null then either put it at the bottom, or display: none;
-// var finisherGroupss = document.getElementsByClassName("finisher-group");
-// for(var i = 0; i < finisherGroupss.length; i++){
-//     console.log(finisherGroupss[i]);
-//     var nodes = document.finisherGroupss[i].childNodes;
-//     console.log(nodes);  
-//     if("div" in finisherGroupss && "div" in finisherGroups.div && "finisher-group" in finisherGroupss.div){
-//         finisherGroupss[i].style.display = "";    
-//     }
-//     else {
-//         finisherGroupss[i].style.display = "none"; 
-//     }
-        
-// }
