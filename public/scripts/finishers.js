@@ -136,10 +136,12 @@ function renderFinisher(finisher) {
     finisherCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
 
     var gsReference = firebase.storage().refFromURL('gs://qwiklabs-finishers-ph-e7667.appspot.com/finishers_imgs/')
-
     var finisherRef = gsReference.child(finisher.name);
-    
-    finisherRef.getDownloadURL().then(function(url) {
+    var finisherRef = gsReference.child("Waving_GREEN.png");
+    if (finisher.image !== "finishers-imgs/Waving_GREEN.png") {
+        finisherRef = gsReference.child(finisher.name);
+    }
+    finisherRef.getDownloadURL().then( function ( url ) {
         finisherImg.src = url;
     })
 

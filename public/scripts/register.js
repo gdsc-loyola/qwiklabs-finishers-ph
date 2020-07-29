@@ -3,7 +3,7 @@ const name = document.getElementById("fullName");
 const questTitle = document.getElementById('quest-title');
 const completionDate = document.getElementById('date');
 const submitBtn = document.getElementById('submit-btn');
-var fileUpload = document.getElementById('finisher-img')
+var fileUpload = document.getElementById('finisher-img');
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
 var questsDict = []; 
@@ -50,21 +50,24 @@ function renderSelectQuest(quest) {
 
 fileUpload.addEventListener("change", function(evt) {
   var imgRef = storageRef.child(name.value);
-  var firstFile = evt.target.files[0]; // get the first file uploaded
+  
+  firstFile = evt.target.files[0]; // get the first file uploaded
   var uploadTask = imgRef.put(firstFile);
   uploadTask.on('state_changed', 
-    function progress(snapshot) {
-      console.log(snapshot.totalBytesTransferred); // progress of upload
-    },
-    function error(err) {
+  function progress(snapshot) {
+    console.log(snapshot.totalBytesTransferred); // progress of upload
+  },
+  function error(err) {
       
-    },
-    function complete() {
+  },
+  function complete() {
               
-    }); 
-  });
+  }); 
+});
         
 submitBtn.addEventListener('click', (e) => {
+
+  console.log(fileUpload.value);
 
   var imgRef = storageRef.child(name.value);
   e.preventDefault();
@@ -73,15 +76,19 @@ submitBtn.addEventListener('click', (e) => {
     
     modal.style.display = "flex";
     registerContainer.style.filter = "brightness(70%)";
-    console.log(questsDict);
-    console.log(questTitle);
-    console.log(questTitle.value);
-    console.log(questsDict[questTitle.value]);
+    
+    if ( fileUpload.value == '') {
+      var path = "finishers-imgs/Waving_GREEN";
+    }
+    else {
+      var path = imgRef.fullPath;
+    }
+
     db.collection("finishers").add({
       name: name.value,
       quest: questTitle.value,
       completionDate: completionDate.value,
-      image: imgRef.fullPath,
+      image: path,
       index: questsDict[questTitle.value]
     })
     .then(function() {
