@@ -74,104 +74,7 @@
     <h1>What are the latest quests?</h1>
     <p>Check out what’s new with Qwiklabs.</p>
     <ul class="home-cards">
-      <li class="home-cards-item">
-        <div class="home-card">
-          <header class="home-card-topbar"></header>
-          <div class="home-card-image"><img src="./assets/images/stackdriver_logging.png" alt="Stackdriver logging badge"></div>
-          <div class="home-card-content">
-            <div class="home-card-title">Stackdriver Logging</div>
-            <table class="home-card-text">
-              <tr>
-                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Credits icon">Fundamental</td>
-                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
-              </tr>
-              <tr>
-                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
-                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
-              </tr>
-              </table>
-              <div class="home-card-btn-holder">
-                <form action="https://www.qwiklabs.com">
-                  <button type="submit" class="home-card-btn">Learn more</button>
-                </form>
-              </div>
-          </div>
-        </div>
-      </li>
-      <li class="home-cards-item">
-        <div class="home-card">
-          <header class="home-card-topbar"></header>
-          <div class="home-card-image"><img src="./assets/images/gcp_essentials.png" alt="GCP Essentials badge"></div>
-          <div class="home-card-content">
-            <div class="home-card-title">GCP Essentials</div>
-            <table class="home-card-text">
-              <tr>
-                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Credits icon">Fundamental</td>
-                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
-              </tr>
-              <tr>
-                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
-                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
-              </tr>
-              </table>
-              <div class="home-card-btn-holder">
-                <form action="https://www.qwiklabs.com">
-                  <button type="submit" class="home-card-btn">Learn more</button>
-                </form>
-              </div>
-          </div>
-        </div>
-      </li>
-      <li class="home-cards-item">
-        <div class="home-card">
-          <header class="home-card-topbar"></header>
-          <div class="home-card-image"><img src="./assets/images/baseline.png" alt="Baseline badge"></div>
-          <div class="home-card-content">
-            <div class="home-card-title">Baseline: Data, ML, AI</div>
-            <table class="home-card-text">
-              <tr>
-                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Level icon">Fundamental</td>
-                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
-              </tr>
-              <tr>
-                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
-                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
-              </tr>
-              </table>
-              <div class="home-card-btn-holder">
-                <form action="https://www.qwiklabs.com">
-                  <button type="submit" class="home-card-btn">Learn more</button>
-                </form>
-              </div>
-          </div>
-        </div>
-      </li>
-      <li class="home-cards-item">
-        <div class="home-card">
-          <header class="home-card-topbar"></header>
-          <div class="home-card-image">
-            <img src="./assets/images/bigquery.png" alt="BigQuery badge"> 
-          </div>
-          <div class="home-card-content">
-            <div class="home-card-title">BigQuery Basics for Data Analysts</div>
-            <table class="home-card-text">
-              <tr>
-                <td><img src="./assets/images/vectors/level.png" class="home-card-icon" alt="Level icon">Fundamental</td>
-                <td><img src="./assets/images/vectors/hours.png" class="home-card-icon" alt="Hours icon">5 hours</td>
-              </tr>
-              <tr>
-                <td><img src="./assets/images/vectors/credits.png" class="home-card-icon" alt="Credits icon">23 credits</td>
-                <td><img src="./assets/images/vectors/steps.png" class="home-card-icon" alt="Steps icon">5 steps</td>
-              </tr>
-              </table>
-              <div class="home-card-btn-holder">
-                <form action="https://www.qwiklabs.com">
-                  <button type="submit" class="home-card-btn">Learn more</button>
-                </form>
-              </div>
-          </div>
-        </div>
-      </li>
+      <!-- quests from Firestore -->
     </ul>
     <a href="quests.html" class="home-card-viewmore">View more</a>
   </section>
@@ -187,134 +90,22 @@
         </h2>
       </div>
       <div class="people-collection">
-        
-        <div class="people-collection-child">
-          <div>
 
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
+        <!-- Template rendering (data from Firebase) -->
+        <template>
+          <div class="people-collection-child">
+            <div>
+              <img src="" alt=""/>
+            </div>
+            <div class="person-info">
+              <p class="person-name"></p>
+              <p id="quest"></p>
+              <p id="completionDate"></p>
+            </div>
+          </div>
+        </template>
 
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-                                                                
-        </div>
-
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
-        <div class="people-collection-child">
-          <div>
-            <img src="assets/images/Ellipse 2.png" alt="Peoples' picture"/>
-          </div>
-          <div class="person-info">
-            <p class="person-name">Victoria Macoy</p>
-            <p>Stackdriver Logging</p>
-            <p>Jun 23, 2018</p>
-          </div>
-        </div>
+        <!-- Template -->
 
       </div>
       <div class="link-holder">
@@ -353,6 +144,7 @@
   </footer>
   <script src='scripts/firebase.js'></script>    
   <script src='scripts/index.js'></script>
+  <script src='scripts/home.js'></script>
 
 </body>
 

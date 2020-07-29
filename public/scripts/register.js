@@ -6,6 +6,7 @@ const submitBtn = document.getElementById('submit-btn');
 var fileUpload = document.getElementById('finisher-img');
 var modal = document.querySelector('.modal');
 var registerContainer = document.querySelector('.register-container');
+
 var questsDict = []; 
 var storageRef = firebase.storage().ref('finishers_imgs/');
 var questIndex;
@@ -21,6 +22,7 @@ db.collection('quests').get().then(snapshot => {
 });
 console.log(questsDict);
 function renderSelectQuest(quest) {
+
   let questName = document.createElement('option');
   questName.textContent = quest.name;
   quests.appendChild(questName);
