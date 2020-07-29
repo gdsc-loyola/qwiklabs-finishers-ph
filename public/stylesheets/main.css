@@ -364,6 +364,7 @@ nav span {
     padding: 64px 0;
     width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
 
 }
@@ -417,6 +418,13 @@ nav span {
     margin: 32px 0;
     justify-content: center;
 }
+
+.people-collection-child img{
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+}
+
 
 .person-info p {
     font-family: Google Sans, sans-serif;
