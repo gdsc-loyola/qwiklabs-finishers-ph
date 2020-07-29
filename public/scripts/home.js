@@ -102,8 +102,10 @@ function renderQuest(quest) {
 db.collection('quests').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var quest = doc.data();
-        console.log(quest);
-        renderQuest(quest);
+        if(quest.featured == true){
+            console.log(quest);
+            renderQuest(quest);
+        }
     });
 });
 
