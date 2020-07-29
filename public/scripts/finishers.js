@@ -5,6 +5,33 @@ var questsDict = [];
 var questsBodyDict = [];
 var storageRef = firebase.storage().ref('finishers_imgs/');
 
+db.collection('quests').get().then(snapshot => {
+  snapshot.docs.forEach(doc => {
+    var quest = doc.data();
+    var count = 0;
+    var finishers = 0;
+
+    db.collection('finishers').get().then(snapshot => {
+        snapshot.docs.forEach(doc => {
+            var finisher = doc.data();
+            if (finisher.index==quest.index&&count<1) {
+                renderSelectQuest(quest);
+                renderFinisherGroup(quest); 
+                questsDict[quest.name] = quest.index;  
+                questsBodyDict[quest.name] = quest.index+"body";
+                console.log("count: "+ count,  quest.name);
+                count ++;
+                
+            }
+            if(finisher.index==quest.index) {
+                renderFinisher(finisher);
+                renderSelectCompletionDate(finisher); 
+            }
+        }); 
+    });
+  });
+});
+
 function renderSelectQuest(quest) {
     let questName = document.createElement('option');
     questName.textContent = quest.name;
@@ -16,25 +43,6 @@ function renderSelectCompletionDate(finisher) {
     questCompletionDate.textContent = moment(finisher.completionDate).format('MMM D, YYYY');
     dates.appendChild(questCompletionDate);
 }
-
-db.collection('quests').get().then(snapshot => {
-  snapshot.docs.forEach(doc => {
-    var quest = doc.data();
-    renderSelectQuest(quest); 
-    renderFinisherGroup(quest); 
-    questsDict[quest.name] = quest.index;  
-    questsBodyDict[quest.name] = quest.index+"body";
-  });
-});
-
-db.collection('finishers').get().then(snapshot => {
-    snapshot.docs.forEach(doc => {
-        var finisher = doc.data();
-        console.log(finisher);
-        renderFinisher(finisher);
-        renderSelectCompletionDate(finisher); 
-    });
-});
 
 function renderFinisherGroup (quest) {
     let finisherGroup = document.createElement('div');
@@ -74,6 +82,7 @@ function renderFinisherGroup (quest) {
     
     finisherGroup.id = quest.index;
     finisherGroupBody.id = quest.index+"body";
+
     finisherGroup.classList.add("finisher-group");
     finisherGroupHeader.classList.add("finisher-group-header");
     finisherGroupHeaderTitle.classList.add("finisher-group-header-title");
