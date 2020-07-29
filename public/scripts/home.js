@@ -125,7 +125,12 @@ function renderFinisher(finisher) {
     var finisherRef = gsReference.child(finisher.name);
     image.alt = finisher.name;
     
-    finisherRef.getDownloadURL().then(function(url) {
+    var finisherRef = gsReference.child("Waving_GREEN.png");
+
+    if (finisher.image !== "finishers-imgs/Waving_GREEN.png") {
+        finisherRef = gsReference.child(finisher.name);
+    }
+    finisherRef.getDownloadURL().then( function ( url ) {
         image.src = url;
     })
 
