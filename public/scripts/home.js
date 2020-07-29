@@ -116,7 +116,7 @@ db.collection('quests').get().then(snapshot => {
 });
 
 /////////////////////////////////  Featured Finishers Rendering  //////////////////////////////////////////////
-
+var finishers = 0;
 // rendering function
 const collection = document.querySelector(".people-collection");
 
@@ -154,7 +154,9 @@ function renderFinisher(finisher) {
 db.collection('finishers').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
         var finisher = doc.data();
-        console.log(finisher);
-        renderFinisher(finisher);
+        if (finishers <= 12) {
+            renderFinisher(finisher);
+            finishers ++;
+        }
     });
 });
