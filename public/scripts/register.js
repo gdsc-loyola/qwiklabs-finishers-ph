@@ -8,8 +8,9 @@ const modal = document.querySelector('.modal');
 const registerContainer = document.querySelector('.register-container');
 
 const questsDict = []; 
-const storRef = storageRef.child('finishers_imgs/');
-const questIndex;
+const storeRef = storageRef.child('finishers_imgs/');
+let questIndex;
+let path;
 const quests = document.querySelector('#quest-title');
 
 db.collection('quests').get().then(snapshot => {
@@ -80,10 +81,10 @@ submitBtn.addEventListener('click', (e) => {
     registerContainer.style.filter = "brightness(70%)";
     
     if ( fileUpload.value == '') {
-      let path = "finishers-imgs/Waving_GREEN";
+      path = "finishers-imgs/Waving_GREEN";
     }
     else {
-      let path = imgRef.fullPath;
+      path = imgRef.fullPath;
     }
 
     db.collection("finishers").add({

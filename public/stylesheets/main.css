@@ -43,10 +43,6 @@ nav span {
     color: #222222;
 }
 
-.navigation-primary {
-    display: inline-block;
-}
-
 .text-container {
     width: 90%;
     margin: 0 auto;
@@ -1463,6 +1459,20 @@ footer {
     display: flex;
     justify-content: space-between;
     padding-top: 64px;
+}
+
+footer span {
+    font-family: Circular Std, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18.5px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    
+}
+footer a {
+    text-decoration: none;
 }
 
 footer img {

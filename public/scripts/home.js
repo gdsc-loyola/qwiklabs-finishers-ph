@@ -133,7 +133,7 @@ function renderFinisher(finisher) {
     let finisherRef = gsReference.child(finisher.name);
     image.alt = finisher.name;
     
-    let finisherRef = gsReference.child("Waving_GREEN.png");
+    finisherRef = gsReference.child("Waving_GREEN.png");
 
     if (finisher.image !== "finishers-imgs/Waving_GREEN.png") {
         finisherRef = gsReference.child(finisher.name);
