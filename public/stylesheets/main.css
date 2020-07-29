@@ -301,6 +301,11 @@ nav span {
     margin-left: 25px;
     margin-bottom: 0;
   }
+
+.home-card-image img {
+    width: 89px;
+    margin: 0 20px;
+}
   
 .home-card-title {
     margin-top: 0;
