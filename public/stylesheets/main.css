@@ -86,15 +86,56 @@ nav span {
     right: 25px;
     cursor: pointer;
     margin: 0 16px;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.burger_button div {
     width: 25px;
     height: 3px;
     margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
     background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.burger_button div:nth-child(1) {
+    top: 0px;
+}
+  
+.burger_button div:nth-child(2),.burger_button div:nth-child(3) {
+    top: 1px;
+}
+  
+.burger_button div:nth-child(4) {
+    top: 2px;
+}
+  
+.burger_button.open div:nth-child(1) {
+    top: 3px;
+    width: 0%;
+    left: 50%;
+}
+  
+.burger_button.open div:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+.burger_button.open div:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 @media screen and (max-width: 850px) {
@@ -129,6 +170,7 @@ nav span {
         width: 100%;
         height: 200px;
         background-color: white;
+        border-bottom: 1px solid #333;
     }
     
     #regBtn{
@@ -550,9 +592,8 @@ nav span {
 }
 
 
-
-
 .register-form h1{
+    margin-top: 2%;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -728,6 +769,7 @@ input {
 @media screen and (max-width: 1050px) {
     .register-form {
         width: 40%;
+        min-width: 480px;
     }
     .register-photo {
         width: 60%;
