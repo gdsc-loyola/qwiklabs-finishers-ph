@@ -144,7 +144,7 @@ nav span {
         position: relative;
         left: auto;
         right: auto;
-        margin-left: 20vw;
+        margin: 0 auto;
     }
 
     nav img {
@@ -156,7 +156,8 @@ nav span {
     }
 
     img[alt = "PH Icon"]{
-        display: none;
+        height: 20px;
+        width: 20px;
     }
 
     .navigation-secondary{
