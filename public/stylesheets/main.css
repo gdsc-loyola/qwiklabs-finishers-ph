@@ -1593,6 +1593,68 @@ footer #footer-finisher {
     color: #8E8E8E;
 }
 
+.main-login-container {
+    width: 384px;
+    height: 360px;
+    display: flex;
+    margin: auto;
+}
+
+.nested-login-container {
+    display: block;
+    margin: auto;
+    margin-top: 180px;
+}
+
+.nested-login-container h1 {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 31.25px;
+    line-height: 40px;
+    /* identical to box height */
+
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.nested-login-container label {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+
+    color: #222222;
+}
+
+.nested-login-container input {
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    width: 320px;
+    height: 40px;
+    font-family: Google Sans, sans-serif;
+}
+
+.nested-login-container .login-button input {
+    font-family: Google Sans, sans-serif;
+    background: #222222;
+    border: 3px solid #222222;
+    box-sizing: border-box;
+    color: white;
+}
+
+.nested-login-container .input-container{
+    margin-top: 25px;
+}
+
+.login-button {
+    margin-top: 50px;
+}
+
+
 @media screen and (max-width: 700px) {
     .footer-container {
         padding-top: 34px;
