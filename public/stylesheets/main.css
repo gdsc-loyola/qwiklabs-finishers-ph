@@ -495,6 +495,48 @@ nav span {
     background-color: #222222;
 }
 
+.admin-courses {
+    width: 90%;
+    margin: 150px auto;
+}
+
+.admin-courses-container {
+    margin: 0 auto;
+}
+
+.admin-courses .admin-courses-header {
+    font-family: Google Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 39.06px;
+    line-height: 50px;
+    /* identical to box height */
+
+    letter-spacing: 0.02em;
+    margin-bottom: 40px;
+
+}
+
+.admin-courses .admin-courses-header span {
+    font-weight: bold;
+}
+
+.admin-courses .course-selection {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.admin-courses .course-selection .course-element {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 60px;
+    font-family: Google Sans, sans-serif;
+}
+
+.admin-courses .course-element > span {
+    margin-left: 20px;
+}
 @media screen and (max-width: 1050px) {
     .people-collection-child {
         width: 50%;
