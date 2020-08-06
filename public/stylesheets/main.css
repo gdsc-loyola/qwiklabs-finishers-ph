@@ -193,7 +193,7 @@ nav span {
     background-image: url(../assets/images/bg-home-hero.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 100vh;
     display: flex;
     align-items: flex-end;
 }
@@ -237,6 +237,9 @@ nav span {
 
 
 @media screen and (max-width: 850px) {
+    .home-hero-container{
+        height : 75vh;
+    }
     .text-content-group{
         max-width: 70vw;
         margin: 0 auto 10%;
