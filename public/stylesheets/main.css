@@ -99,11 +99,14 @@ nav span {
 
 @media screen and (max-width: 850px) {
 
+    .text-container{
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+
     .navigation-primary{
         position: relative;
-        left: auto;
-        right: auto;
-        margin-left: 20vw;
     }
 
     nav img {
@@ -361,6 +364,35 @@ nav span {
 .home-card-viewmore:hover{
     color:white;
     background-color: #222222;
+}
+
+
+
+@media screen and (max-width: 1050px) {
+
+    .home-quest h1{
+        font-size: 26px;
+        line-height: 28px;
+    }
+    
+    .home-quest p{
+        font-size: 17px;
+        line-height: 19px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .home-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-card-btn{
+        width: 70%;
+    }
+
 }
 
 
@@ -1593,14 +1625,26 @@ footer #footer-finisher {
     color: #8E8E8E;
 }
 
+@media screen and (min-width: 750px) {
+    footer{
+        height: 300px;
+    }
+}
+
 @media screen and (max-width: 700px) {
+
     .footer-container {
+        flex-direction: column;
         padding-top: 34px;
         padding-left: 10px;
     }
 
-    .footer-container{
-        flex-direction: column;
+    footer span {
+        font-size: 16.5px;
+    }
+    
+    footer #footer-finisher {
+        font-size: 18.5px;
     }
 
     .footer-secondary{
@@ -1609,6 +1653,7 @@ footer #footer-finisher {
 
     .footer-secondary a{
         margin: 15px 0 0 0;
+        font-size: 14px;
     }
 
     .footer-secondary a:nth-child(4){
@@ -1617,11 +1662,21 @@ footer #footer-finisher {
 
     .reg-mobile{
         display: block;
+        font-size: 16px;
+    }
+
+    .reg-mobile h1{
+        font-size: 19px;
+    }
+    
+    .reg-mobile button{
+        font-size: 12px;
     }
 
     .footer-container-lower{
         left: 0;
         width: 100%;
+        font-size: 10.8px;
     }
 
     .footer-container-lower div:first-child{
@@ -1643,6 +1698,10 @@ footer #footer-finisher {
 
     .footer-container-lower .login-container {
         display: none;
+    }
+
+    .footer-container-lower .login-container #admin-login {
+        font-size: 10.8px;
     }
 }
 
