@@ -81,7 +81,7 @@ submitBtn.addEventListener('click', (e) => {
     registerContainer.style.filter = "brightness(70%)";
     
     if ( fileUpload.value == '') {
-      path = "finishers-imgs/Waving_GREEN";
+      path = "finishers-imgs/Waving_GREEN.png";
     }
     else {
       path = imgRef.fullPath;
