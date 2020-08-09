@@ -593,6 +593,7 @@ nav span {
     text-align: left;
     letter-spacing: 0.02em;
     color: #222222;
+    padding-top: 2vh; 
 }
 
 .alert {
