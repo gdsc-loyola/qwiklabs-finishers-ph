@@ -52,7 +52,7 @@ function renderSelectQuest(quest) {
         }*/
 
 fileUpload.addEventListener("change", function(evt) {
-  let imgRef = storageRef.child(name.value);
+  let imgRef = storeRef.child(name.value);
   
   firstFile = evt.target.files[0]; // get the first file uploaded
   let uploadTask = imgRef.put(firstFile);

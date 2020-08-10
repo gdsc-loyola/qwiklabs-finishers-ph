@@ -110,7 +110,8 @@ nav span {
     }
 
     nav img {
-        width: 20vw;
+        width: 128px;
+        height: 24px;
     }
 
     nav span{
@@ -118,7 +119,8 @@ nav span {
     }
 
     img[alt = "PH Icon"]{
-        display: none;
+        height: 20px;
+        width: 20px;
     }
 
     .navigation-secondary{
@@ -132,6 +134,9 @@ nav span {
         width: 100%;
         height: 200px;
         background-color: white;
+        -webkit-box-shadow: 0 4px 6px -6px #222;
+        -moz-box-shadow: 0 4px 6px -6px #222;
+        box-shadow: 0 4px 6px -6px #222;
     }
     
     #regBtn{
@@ -400,7 +405,7 @@ nav span {
 .home-finishers-container {
     background: #FFD457;
     padding: 64px 25px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1050,6 +1055,7 @@ margin-top: 0;
 }
 
 .finisher-group-header-title{
+    width: 80%;
     display: flex;
     align-items: center;
 }
@@ -1137,6 +1143,7 @@ margin-top: 0;
 
 .finisher-member img{
     width: 100px;
+    height: 100px;
     border-radius: 100%;
 }
 
