@@ -111,7 +111,7 @@ db.collection('quests').get().then(snapshot => {
 
 function questSearch () {
     let filter, title;
-    let quests = document.querySelectorAll(".card");
+    let quests = document.querySelectorAll(".cards-item");
     filter = document.getElementById('questSearch').value;
     for(let i = 0; i < quests.length; i++){
         title = quests[i].querySelector(".card-title").textContent
