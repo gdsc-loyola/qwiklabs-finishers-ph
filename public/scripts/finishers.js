@@ -159,6 +159,40 @@ function filterSearch () {
     dateSearch ();
 }
 
+function mobileSearch () {
+    let input, filter, txtValue;
+    input = document.getElementById('mobileSearch');
+    filter = input.value;
+    let finisherMembers = document.getElementsByClassName("finisher-member");
+    for(let i = 0; i < finisherMembers.length; i++){
+
+        txtValue = finisherMembers[i].textContent;
+
+        if (txtValue.search(new RegExp(filter, "i"))>-1) {
+            finisherMembers[i].style.display = "";
+        }
+        else {
+            finisherMembers[i].style.display = "none"; 
+        }
+    }
+    let groups = document.querySelectorAll(".finisher-group");
+    groups.forEach(group => {
+        let groupBody = group.querySelector(".finisher-group-body");
+        let groupBodyFinisher = groupBody.querySelectorAll(".finisher-member")
+        var numberOfFinisher = 0;
+        groupBodyFinisher.forEach(finisher => {
+            if(finisher.style.display == ""){
+                numberOfFinisher++;
+            }
+        })
+        if(numberOfFinisher === 0){
+            group.style.display = "none";
+        } else {
+            group.style.display = "block";
+        }
+    })
+}
+
 function finisherSearch () {
     let input, filter, txtValue;
     input = document.getElementById('filterSearch');
@@ -209,22 +243,6 @@ function questSearch () {
             }
         }
     }
-    let groups = document.querySelectorAll(".finisher-group");
-    groups.forEach(group => {
-        let groupBody = group.querySelector(".finisher-group-body");
-        let groupBodyFinisher = groupBody.querySelectorAll(".finisher-member")
-        var numberOfFinisher = 0;
-        groupBodyFinisher.forEach(finisher => {
-            if(finisher.style.display == ""){
-                numberOfFinisher++;
-            }
-        })
-        if(numberOfFinisher === 0){
-            group.style.display = "none";
-        } else {
-            group.style.display = "block";
-        }
-    })
 }
 
 function dateSearch () {
