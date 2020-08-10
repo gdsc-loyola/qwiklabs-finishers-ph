@@ -175,7 +175,22 @@ function finisherSearch () {
             finisherMembers[i].style.display = "none"; 
         }
     }
-    
+    let groups = document.querySelectorAll(".finisher-group");
+    groups.forEach(group => {
+        let groupBody = group.querySelector(".finisher-group-body");
+        let groupBodyFinisher = groupBody.querySelectorAll(".finisher-member")
+        var numberOfFinisher = 0;
+        groupBodyFinisher.forEach(finisher => {
+            if(finisher.style.display == ""){
+                numberOfFinisher++;
+            }
+        })
+        if(numberOfFinisher === 0){
+            group.style.display = "none";
+        } else {
+            group.style.display = "block";
+        }
+    })
 }
 
 function questSearch () {
@@ -184,7 +199,6 @@ function questSearch () {
     filter = questsDict[input.value];
     let finisherGroups = document.getElementsByClassName("finisher-group");
     for(let i = 0; i < finisherGroups.length; i++){
-        console.log(finisherGroups[i].id);
         txtValue = finisherGroups[i].id;
         if(filter!="View All") {
             if (txtValue.search(new RegExp(filter, "i"))>-1) {
@@ -195,23 +209,52 @@ function questSearch () {
             }
         }
     }
+    let groups = document.querySelectorAll(".finisher-group");
+    groups.forEach(group => {
+        let groupBody = group.querySelector(".finisher-group-body");
+        let groupBodyFinisher = groupBody.querySelectorAll(".finisher-member")
+        var numberOfFinisher = 0;
+        groupBodyFinisher.forEach(finisher => {
+            if(finisher.style.display == ""){
+                numberOfFinisher++;
+            }
+        })
+        if(numberOfFinisher === 0){
+            group.style.display = "none";
+        } else {
+            group.style.display = "block";
+        }
+    })
 }
 
 function dateSearch () {
     let input, filter, txtValue;
     input = document.getElementById('completionDate');
-    filter = input.value;
+    filter = moment(input.value).format('MMM D, YYYY')
     let finisherMembers = document.getElementsByClassName("finisher-member");
     for(let i = 0; i < finisherMembers.length; i++){
-        console.log(finisherMembers[i]);
         txtValue = finisherMembers[i].textContent;
-        if(filter!="View All") {
-            if (txtValue.search(new RegExp(filter, "i"))>-1) {
-                finisherMembers[i].style.display = "";    
-            }
-            else {
-                finisherMembers[i].style.display = "none"; 
-            }
+        if (txtValue.search(new RegExp(filter, "i"))>-1) {
+            finisherMembers[i].style.display = "";    
+        }
+        else {
+            finisherMembers[i].style.display = "none"; 
         }
     }
+    let groups = document.querySelectorAll(".finisher-group");
+    groups.forEach(group => {
+        let groupBody = group.querySelector(".finisher-group-body");
+        let groupBodyFinisher = groupBody.querySelectorAll(".finisher-member")
+        var numberOfFinisher = 0;
+        groupBodyFinisher.forEach(finisher => {
+            if(finisher.style.display == ""){
+                numberOfFinisher++;
+            }
+        })
+        if(numberOfFinisher === 0){
+            group.style.display = "none";
+        } else {
+            group.style.display = "block";
+        }
+    })
 }
