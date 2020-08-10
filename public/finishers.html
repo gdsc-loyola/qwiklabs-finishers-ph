@@ -57,7 +57,7 @@
         <div class="finisher-page-header">
             <h1>Finishers</h1>
             <div class="finisher-page-search">
-                <input type="text" id="nameSearch" name="nameSearch" placeholder="Search for a quest or finisher">
+                <input type="text" id="mobileSearch" name="name" onkeyup="mobileSearch()" placeholder="Search for a finisher">
                 <img src="assets/images/vectors/search.png">
             </div>
         </div>
@@ -73,10 +73,7 @@
                     <option>View All</option>
                 </select>
                 <label for="date">Date of Completion</label>
-                <select id="completionDate" name="date" onchange="dateSearch()" >
-                    <option disabled selected hidden>Select a date</option>
-                    <option>View All</option>
-                </select>
+                <input type=date id="completionDate" name="date" onchange="dateSearch()" >
             </div>
         </div>
     </div>

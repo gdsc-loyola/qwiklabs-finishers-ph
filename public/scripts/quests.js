@@ -108,3 +108,18 @@ db.collection('quests').get().then(snapshot => {
         renderQuest(quest);
     });
 });
+
+function questSearch () {
+    let filter, title;
+    let quests = document.querySelectorAll(".cards-item");
+    filter = document.getElementById('questSearch').value;
+    for(let i = 0; i < quests.length; i++){
+        title = quests[i].querySelector(".card-title").textContent
+        if (title.search(new RegExp(filter, "i"))>-1) {
+            quests[i].style.display = "";    
+        }
+        else {
+            quests[i].style.display = "none"; 
+        }
+    }
+}
