@@ -56,6 +56,10 @@ nav span {
     display: inline-block;
 }
 
+.navigation-primary a:hover {
+    text-decoration: none;
+}
+
 .navigation-secondary a,
 .navigation-secondary div {
     font-family: Google Sans, sans-serif;
@@ -65,10 +69,13 @@ nav span {
     line-height: 18px;
     /* identical to box height */
     letter-spacing: 0.02em;
-    /* Black */
     color: #151522;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.navigation-secondary a:hover {
+    text-decoration: underline;
 }
 
 .navigation-secondary button {
@@ -78,6 +85,7 @@ nav span {
     padding: 7px 14px;
     background-color: white;
 }
+
 
 .burger_button {
     display: none;
@@ -91,6 +99,12 @@ nav span {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
 }
+
+#regBtn:hover {
+    background-color: #333; 
+    color: #fff;
+    cursor: pointer;
+}; 
 
 .burger_button div {
     width: 25px;
@@ -138,6 +152,10 @@ nav span {
     transform: translateY(-6px) rotate(-45deg);
 }
 
+#quest-title, #completionDate {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 850px) {
 
     .text-container{
@@ -164,8 +182,8 @@ nav span {
     }
 
     img[alt = "PH Icon"]{
-        height: 20px;
-        width: 20px;
+        height: 10px;
+        width: 10px;
     }
 
     .navigation-secondary{
@@ -184,10 +202,7 @@ nav span {
         box-shadow: 0 4px 6px -6px #222;
 
     }
-    
-    #regBtn{
-        border: none;
-    }
+
 
     .burger_button{
         display: block;
@@ -195,7 +210,25 @@ nav span {
 
 }
 
+@media screen and (max-width: 320px) {
 
+    .navigation-primary{
+        position: relative;
+        left: auto;
+        right: auto;
+        margin: 0;
+    }
+
+    nav img {
+        width: 100px;
+        height: 18px;
+    }
+
+    img[alt = "PH Icon"]{
+        height: 16px;
+        width: 16px;
+    }
+}
 
 
 
@@ -1611,6 +1644,19 @@ footer a {
     text-decoration: none;
 }
 
+footer a:visited {
+    color: #C4C4C4;
+}
+
+footer a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+footer a:active {
+    color: #333;
+}
+
 footer img {
     vertical-align: middle;
     margin-top: -5px;
@@ -1623,7 +1669,6 @@ footer #footer-finisher {
     font-size: 18.5px;
     line-height: 23px;
     letter-spacing: 0.02em;
-
     color: #FFFFFF;
 
 }
