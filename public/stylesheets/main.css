@@ -86,28 +86,77 @@ nav span {
     right: 25px;
     cursor: pointer;
     margin: 0 16px;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
 }
 
-.bar1,
-.bar2,
-.bar3 {
+.burger_button div {
     width: 25px;
     height: 3px;
     margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
     background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.burger_button div:nth-child(1) {
+    top: 0px;
+}
+  
+.burger_button div:nth-child(2),.burger_button div:nth-child(3) {
+    top: 1px;
+}
+  
+.burger_button div:nth-child(4) {
+    top: 2px;
+}
+  
+.burger_button.open div:nth-child(1) {
+    top: 3px;
+    width: 0%;
+    left: 50%;
+}
+  
+.burger_button.open div:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+  
+.burger_button.open div:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
 }
 
 @media screen and (max-width: 850px) {
+
+    .text-container{
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
 
     .navigation-primary{
         position: relative;
         left: auto;
         right: auto;
-        margin-left: 20vw;
+        margin: 0 auto;
+
     }
 
     nav img {
-        width: 20vw;
+        width: 128px;
+        height: 24px;
     }
 
     nav span{
@@ -115,7 +164,8 @@ nav span {
     }
 
     img[alt = "PH Icon"]{
-        display: none;
+        height: 20px;
+        width: 20px;
     }
 
     .navigation-secondary{
@@ -129,6 +179,10 @@ nav span {
         width: 100%;
         height: 200px;
         background-color: white;
+        -webkit-box-shadow: 0 4px 6px -6px #222;
+        -moz-box-shadow: 0 4px 6px -6px #222;
+        box-shadow: 0 4px 6px -6px #222;
+
     }
     
     #regBtn{
@@ -194,6 +248,9 @@ nav span {
 
 
 @media screen and (max-width: 850px) {
+    .home-hero-container{
+        height : 75vh;
+    }
     .text-content-group{
         max-width: 70vw;
         margin: 0 auto 10%;
@@ -364,11 +421,40 @@ nav span {
 }
 
 
+
+@media screen and (max-width: 1050px) {
+
+    .home-quest h1{
+        font-size: 26px;
+        line-height: 28px;
+    }
+    
+    .home-quest p{
+        font-size: 17px;
+        line-height: 19px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    .home-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-card-btn{
+        width: 70%;
+    }
+
+}
+
+
 /*FOR HOME FINSIHERS*/
 .home-finishers-container {
     background: #FFD457;
     padding: 64px 25px;
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -550,9 +636,8 @@ nav span {
 }
 
 
-
-
 .register-form h1{
+    margin-top: 2%;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -561,6 +646,7 @@ nav span {
     text-align: left;
     letter-spacing: 0.02em;
     color: #222222;
+    padding-top: 2vh; 
 }
 
 .alert {
@@ -728,6 +814,7 @@ input {
 @media screen and (max-width: 1050px) {
     .register-form {
         width: 40%;
+        min-width: 480px;
     }
     .register-photo {
         width: 60%;
@@ -805,44 +892,42 @@ input {
   box-sizing: border-box;
 }
 
-.header-container {
-  padding-top: 5%;
-  width: 100%;
-  overflow: auto;
-  font-family: Google Sans, sans-serif;
+.quest-header-container {
+  padding: 80px 5% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .quests-title {
-  padding-left: 5%;
-  float: left;
-  vertical-align: middle;
-  font-size: xx-large;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    color: #222222;
+    margin: 0;
+    padding-top: 30px;
 }
 
 .search-box {
-  margin-top: 20px;
-  margin-right: 40px;
-  vertical-align: middle;
-  float: right;
-  overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #C4C4C4;
+    background-color: #FBFBFB;
+    margin-top: 30px;
 }
 
 .search-box input{
-  width: 415px;
-  height: 40px;
-  padding: 10px;
-  border: 1px solid #C4C4C4;
-  box-sizing: border-box;
-}
-
-.search-icon {
-  position: absolute;
-  right: 0;
-  margin-right: 45px;
-  margin-top: 10px;
-  background: white;
-  font-size: x-large !important;
-  color: #C4C4C4;
+    width: 400px;
+    height: 25px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    background-color: #FBFBFB;
+    border: none;
 }
 
 .card-topbar {
@@ -853,17 +938,20 @@ input {
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(295px, 2fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   list-style: none;
   width: 100%;
   margin: 0;
-  padding: 25px;
+  padding: 25px 5%;
   font-family: Google Sans, sans-serif;
 }
  
 .cards-item {
-  padding: 1rem;
+  width: 23%;
+  margin-bottom: 20px;
 }
 
 .card {
@@ -899,14 +987,13 @@ input {
   }
 
 .card-title {
-margin-top: 0;
+  margin-top: 0;
   margin-bottom: 12px;
-  line-height: xx-large;
   letter-spacing: 0.02em;
   color: #222222;
   font-style: normal;
   font-weight: bold;
-  font-size: x-large;
+  font-size: 18px;
 }
 
 .card-icon {
@@ -936,6 +1023,40 @@ margin-top: 0;
   background-color: #222222;
   border-color: #222222;
   color: white;
+}
+
+@media screen and (max-width: 1280px) {
+    .cards-item{
+        width: 31%;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+    .cards-item{
+        width: 47%;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+
+    .quest-header-container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-box{
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 630px) {
+    .cards-item{
+        width: 100%;
+    }
+
 }
 
 /*FOR FINISHERS PAGE*/
@@ -985,6 +1106,18 @@ margin-top: 0;
     border: none;
 }
 
+.finisher-quest-mobile{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    border: 1px solid #C4C4C4;
+    background-color: #FBFBFB;
+    color: #C4C4C4;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
 .finisher-content{
     display: flex;
     justify-content: space-between;
@@ -1017,6 +1150,7 @@ margin-top: 0;
 }
 
 .finisher-group-header-title{
+    width: 80%;
     display: flex;
     align-items: center;
 }
@@ -1104,7 +1238,9 @@ margin-top: 0;
 
 .finisher-member img{
     width: 100px;
+    height: 100px;
     border-radius: 100%;
+    overflow: hidden;
 }
 
 .finisher-member h5{
@@ -1593,14 +1729,26 @@ footer #footer-finisher {
     color: #8E8E8E;
 }
 
+@media screen and (min-width: 750px) {
+    footer{
+        height: 300px;
+    }
+}
+
 @media screen and (max-width: 700px) {
+
     .footer-container {
+        flex-direction: column;
         padding-top: 34px;
         padding-left: 10px;
     }
 
-    .footer-container{
-        flex-direction: column;
+    footer span {
+        font-size: 16.5px;
+    }
+    
+    footer #footer-finisher {
+        font-size: 18.5px;
     }
 
     .footer-secondary{
@@ -1609,6 +1757,7 @@ footer #footer-finisher {
 
     .footer-secondary a{
         margin: 15px 0 0 0;
+        font-size: 14px;
     }
 
     .footer-secondary a:nth-child(4){
@@ -1617,11 +1766,21 @@ footer #footer-finisher {
 
     .reg-mobile{
         display: block;
+        font-size: 16px;
+    }
+
+    .reg-mobile h1{
+        font-size: 19px;
+    }
+    
+    .reg-mobile button{
+        font-size: 12px;
     }
 
     .footer-container-lower{
         left: 0;
         width: 100%;
+        font-size: 10.8px;
     }
 
     .footer-container-lower div:first-child{
@@ -1643,6 +1802,10 @@ footer #footer-finisher {
 
     .footer-container-lower .login-container {
         display: none;
+    }
+
+    .footer-container-lower .login-container #admin-login {
+        font-size: 10.8px;
     }
 }
 

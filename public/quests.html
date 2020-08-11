@@ -65,11 +65,11 @@
     <section class="quests">
       <div class="quests-container">
         
-        <div class="header-container">
+        <div class="quest-header-container">
             <h1 class="quests-title">Quests</h1>
             <div class="search-box">
-              <input type="text" placeholder="Search for a quest" required>
-                <i class="material-icons search-icon">search</i>
+              <input type="text" id="questSearch" placeholder="Search for a quest" onkeyup="questSearch()" required>
+              <img src="assets/images/vectors/search.png">
             </div>
         </div>
         <ul class="cards">
@@ -98,7 +98,7 @@
       </div>
       <div class="footer-container-lower">
         <div>
-          <p>Made by Student Developer Clubs - Loyola</p>
+          <p>Made by Developer Student Clubs - Loyola</p>
           <p>Copyright © 2020 All rights reserved</p>
         </div>
         <div class="login-container">
