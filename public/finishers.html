@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Home | Qwiklabs Finishers PH</title>
+  <link rel="icon" href="assets/images/image 2.png" >
+  <meta property="og:title" content="Qwiklabs Finishers PH" />
+  <meta developer="" site="">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.qwiklabs.finishersph.dev/" />
+  <meta property="og:image" content="https://www.qwiklabs.finishersph.dev/assets/images/image 1.png" />
+  <meta property="og:image:secure_url" content="https://www.qwiklabs.finishersph.dev/assets/images/image 1.png" />
+  <meta property="og:site_name" content="Qwiklabs Finishers PH" />
+  <meta property="og:description"
+    content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests." />
+  <meta name="description"
+    content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/normalize.css" />
+  <link rel="stylesheet" href="stylesheets/main.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+</head>
+  <body>
+    <nav>
+      <div class="text-container">
+        <div class="navigation-primary">
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+            <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          </a>
+        </div>
+
+        <div class="navigation-secondary">
+          <a href="index.html">Home</a>
+          <a href="quests.html">Quests</a>
+          <a href="finishers.html">Finishers</a>
+          <a href="register.html">
+	          <button id="regBtn">Register</button>
+	        </a>
+        </div>
+
+        <div class="burger_button" onclick="showMenu()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="finisher-page">
+        <div class="finisher-page-header">
+            <h1>Finishers</h1>
+            <div class="finisher-page-search">
+                <input type="text" id="mobileSearch" name="name" onkeyup="mobileSearch()" placeholder="Search for a finisher">
+                <img src="assets/images/vectors/search.png">
+            </div>
+        </div>
+        <div class="finisher-content">
+            <div class="finisher-groups"></div>
+            <div class="finisher-filter">
+                <h5>Filtered Search</h5>
+                <label for="name">Finisher's Name</label>
+                <input type="text" id="filterSearch" name="name" onkeyup="finisherSearch()" placeholder="ex. Juan Dela Cruz">
+                <label for="quest">Quest Title</label>
+                <select id="quest-title" name="quest-name" onchange="questSearch()" >
+                    <option disabled selected hidden>Select a quest</option>
+                    <option>View All</option>
+                </select>
+                <label for="date">Date of Completion</label>
+                <input type=date id="completionDate" name="date" onchange="dateSearch()" >
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+          <div>
+            <a href = index.html>
+              <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+              <span>FINISHERS</span>
+            </a>
+          </div>
+          <div class="footer-secondary">
+            <a href="index.html">Home</a>
+            <a href="quests.html">Quests</a>
+            <a href="finishers.html">Finishers</a>
+            <a href="register.html">Register</a>
+            <div class="reg-mobile">
+              <h1>Showcase your <br> accomplishments</h1>
+              <a href="register.html"><button>Register</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-container-lower">
+          <div>
+            <a href="https://dscadmu.org" target="_blank" description="DSC Loyola Website">
+              <p>Made by Developer Student Clubs - Loyola</p>
+            </a>
+            <p>Copyright © 2020 All rights reserved</p>
+          </div>
+          <!--WIP
+          <div class="login-container">
+            <a href="#" id="admin-login">Admin Log in</a>
+          </div>-->
+        </div>
+      </footer>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-storage.js"></script>
+      <script src='scripts/index.js'></script>
+      <script src="./scripts/firebase.js"></script>
+      <script src='scripts/finishers.js'></script>
+      
+    </body>
+    
+</html>
