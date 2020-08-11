@@ -70,8 +70,6 @@ fileUpload.addEventListener("change", function(evt) {
         
 submitBtn.addEventListener('click', (e) => {
 
-  console.log(fileUpload.value);
-
   let imgRef = storeRef.child(name.value);
   e.preventDefault();
 
