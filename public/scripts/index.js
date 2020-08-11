@@ -7,6 +7,7 @@ window.addEventListener("resize", () => {
         navSecondary.style.display = "inline-block";
     } else {
         navSecondary.style.display = "none";
+        
     }
 })
 

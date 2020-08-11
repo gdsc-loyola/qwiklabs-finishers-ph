@@ -48,7 +48,7 @@ nav span {
 
 .text-container {
     width: 90%;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -57,6 +57,10 @@ nav span {
 .navigation-primary,
 .navigation-secondary {
     display: inline-block;
+}
+
+.navigation-primary {
+    margin-left: 25px;
 }
 
 .navigation-primary a:hover {
@@ -103,13 +107,13 @@ nav span {
     transition: .5s ease-in-out;
 }
 
-#regBtn:hover {
+#regBtn:hover #regBtn2:hover {
     background-color: #333; 
     color: #fff;
     cursor: pointer;
 }; 
 
-.burger_button {
+.burger_button div {
     width: 25px;
     height: 3px;
     margin: 3px 0;
@@ -125,14 +129,34 @@ nav span {
 
 .burger_button div:nth-child(1) {
     top: 0px;
+    /*won't inherit from .burger_button div*/
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
   
 .burger_button div:nth-child(2),.burger_button div:nth-child(3) {
     top: 1px;
-}
-  
-.burger_button div:nth-child(4) {
-    top: 2px;
+    /*won't inherit from .burger_button div*/
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
   
 .burger_button.open div:nth-child(1) {
@@ -171,7 +195,6 @@ nav span {
         position: relative;
         left: auto;
         right: auto;
-
     }
 
     nav img {
@@ -209,15 +232,15 @@ nav span {
         display: block;
     }
 
+    #regBtn {
+        border: none;
+    }
 }
 
 @media screen and (max-width: 320px) {
 
     .navigation-primary{
-        position: relative;
-        left: auto;
-        right: auto;
-        margin: 0;
+        margin-left: 25px;
     }
 
     nav img {
@@ -259,7 +282,7 @@ nav span {
 
 .text-content-group h1 {
     text-align: left;
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 2rem;
@@ -537,6 +560,7 @@ nav span {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 25px;
 }
 
 .people-collection-child {
@@ -657,11 +681,13 @@ nav span {
 }
 
 /*REGISTER*/
+
 .register-container{
     display: flex;
     flex-direction: row;
     position: relative;
     margin-top: 2%;
+    min-height: 70vh;
 }
 
 .register-form {
@@ -849,6 +875,9 @@ input {
 }
 
 @media screen and (max-width: 1050px) {
+    .register-container {
+        min-height: 77vh;
+    }
     .register-form {
         width: 40%;
         min-width: 480px;
@@ -869,6 +898,9 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+    .register-container {
+        min-height: 70vh;
+    }
     .register-form {
         width: 100%;
     }
@@ -880,12 +912,18 @@ input {
 
 @media screen and (max-width: 480px) {
     .register-container{
-        max-width: 480px;
+        width: 100%;
+        padding-top: 40px;
     }
 
     .register-form {
-        width: 50%;
+        min-width: 0;
+        width: 100vw;
         padding: 5% 5%;
+    }
+
+    .register-form form {
+        max-width: 100vw;
     }
 
     .register-photo {
@@ -922,7 +960,7 @@ input {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 411px) {
 
 }
 
@@ -1628,23 +1666,24 @@ input {
 
 /*FOR FOOTER*/
 footer {
+    box-sizing: border-box;
     background: #222222;
     height: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: 3% 5%;
 }
 
-.footer-container {
-    width: 100%;
+footer .footer-container {
+    width: 90vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 64px;
 }
 
 footer span {
-    font-family: Circular Std, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 18.5px;
@@ -1678,7 +1717,7 @@ footer img {
 }
 
 footer #footer-finisher {
-    font-family: Circular Std, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 18.5px;
@@ -1694,7 +1733,7 @@ footer #footer-finisher {
 }
 
 .footer-secondary a {
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -1708,7 +1747,7 @@ footer #footer-finisher {
 .reg-mobile{
     display: none;
     padding: 10px 0;
-    font-family: Google Sans;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1751,7 +1790,7 @@ footer #footer-finisher {
 
     width: 90%;
     margin: 0 auto;
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12.8px;
@@ -1779,7 +1818,7 @@ footer #footer-finisher {
 }
 
 .footer-container-lower .login-container #admin-login {
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12.8px;
@@ -1798,7 +1837,7 @@ footer #footer-finisher {
 @media screen and (max-width: 700px) {
 
     .footer-container {
-        
+        flex-direction: column;
         padding-top: 34px;
         padding-left: 10px;
     }
@@ -1869,8 +1908,8 @@ footer #footer-finisher {
     }
 }
 
-@media screen and (max-width: 480px) {
-    footer {
+@media screen and (max-width: 420px) {
+    .footer-container{
         width: 100vw;
     }
 }
