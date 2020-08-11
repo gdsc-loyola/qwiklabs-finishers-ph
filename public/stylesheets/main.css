@@ -20,6 +20,9 @@ nav {
     background-color: white;
     padding: 20px 0;
     z-index: 1000;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
 }
 
 nav img {
@@ -45,7 +48,7 @@ nav span {
 
 .text-container {
     width: 90%;
-    margin: 0 auto;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -54,6 +57,14 @@ nav span {
 .navigation-primary,
 .navigation-secondary {
     display: inline-block;
+}
+
+.navigation-primary {
+    margin-left: 25px;
+}
+
+.navigation-primary a:hover {
+    text-decoration: none;
 }
 
 .navigation-secondary a,
@@ -65,10 +76,13 @@ nav span {
     line-height: 18px;
     /* identical to box height */
     letter-spacing: 0.02em;
-    /* Black */
     color: #151522;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.navigation-secondary a:hover {
+    text-decoration: underline;
 }
 
 .navigation-secondary button {
@@ -78,6 +92,7 @@ nav span {
     padding: 7px 14px;
     background-color: white;
 }
+
 
 .burger_button {
     display: none;
@@ -91,6 +106,12 @@ nav span {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
 }
+
+#regBtn:hover #regBtn2:hover {
+    background-color: #333; 
+    color: #fff;
+    cursor: pointer;
+}; 
 
 .burger_button div {
     width: 25px;
@@ -108,14 +129,34 @@ nav span {
 
 .burger_button div:nth-child(1) {
     top: 0px;
+    /*won't inherit from .burger_button div*/
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
   
 .burger_button div:nth-child(2),.burger_button div:nth-child(3) {
     top: 1px;
-}
-  
-.burger_button div:nth-child(4) {
-    top: 2px;
+    /*won't inherit from .burger_button div*/
+    width: 25px;
+    height: 3px;
+    margin: 3px 0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    background-color: #333;
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
 }
   
 .burger_button.open div:nth-child(1) {
@@ -138,6 +179,10 @@ nav span {
     transform: translateY(-6px) rotate(-45deg);
 }
 
+#quest-title, #completionDate {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 850px) {
 
     .text-container{
@@ -150,22 +195,20 @@ nav span {
         position: relative;
         left: auto;
         right: auto;
-        margin: 0 auto;
-
     }
 
     nav img {
-        width: 128px;
-        height: 24px;
-    }
-
-    nav span{
-        font-size: 0.8em;
+        width: 124px;
+        height: 20px;
     }
 
     img[alt = "PH Icon"]{
         height: 20px;
         width: 20px;
+    }
+
+    nav span{
+        font-size: 0.8em;
     }
 
     .navigation-secondary{
@@ -184,18 +227,32 @@ nav span {
         box-shadow: 0 4px 6px -6px #222;
 
     }
-    
-    #regBtn{
-        border: none;
-    }
 
     .burger_button{
         display: block;
     }
 
+    #regBtn {
+        border: none;
+    }
 }
 
+@media screen and (max-width: 320px) {
 
+    .navigation-primary{
+        margin-left: 25px;
+    }
+
+    nav img {
+        width: 100px;
+        height: 18px;
+    }
+
+    img[alt = "PH Icon"]{
+        height: 16px;
+        width: 16px;
+    }
+}
 
 
 
@@ -225,7 +282,7 @@ nav span {
 
 .text-content-group h1 {
     text-align: left;
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 2rem;
@@ -489,6 +546,7 @@ nav span {
     margin: 0;
     padding: 0px 0px 5px 0px;
     color: #222222;
+    width: 100vw;
 }
 
 .home-hero-container .text-content-group .link-holder {
@@ -499,8 +557,10 @@ nav span {
 
 .people-collection {
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
+    padding: 0 25px;
 }
 
 .people-collection-child {
@@ -621,10 +681,13 @@ nav span {
 }
 
 /*REGISTER*/
+
 .register-container{
     display: flex;
     flex-direction: row;
     position: relative;
+    margin-top: 2%;
+    min-height: 70vh;
 }
 
 .register-form {
@@ -637,7 +700,7 @@ nav span {
 
 
 .register-form h1{
-    margin-top: 2%;
+    margin-top: 5%;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -812,6 +875,9 @@ input {
 }
 
 @media screen and (max-width: 1050px) {
+    .register-container {
+        min-height: 77vh;
+    }
     .register-form {
         width: 40%;
         min-width: 480px;
@@ -832,6 +898,9 @@ input {
 }
 
 @media screen and (max-width: 768px) {
+    .register-container {
+        min-height: 70vh;
+    }
     .register-form {
         width: 100%;
     }
@@ -843,12 +912,18 @@ input {
 
 @media screen and (max-width: 480px) {
     .register-container{
-        max-width: 480px;
+        width: 100%;
+        padding-top: 40px;
     }
 
     .register-form {
-        width: 50%;
+        min-width: 0;
+        width: 100vw;
         padding: 5% 5%;
+    }
+
+    .register-form form {
+        max-width: 100vw;
     }
 
     .register-photo {
@@ -884,12 +959,21 @@ input {
     }
 
 }
+
+@media screen and (max-width: 411px) {
+
+}
+
 /*FOR QUESTS*/
 
 *,
 *::before,
 *::after { 
   box-sizing: border-box;
+}
+
+.quests {
+    min-height: 90vh;
 }
 
 .quest-header-container {
@@ -940,7 +1024,7 @@ input {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   list-style: none;
   width: 100%;
@@ -951,7 +1035,7 @@ input {
  
 .cards-item {
   width: 23%;
-  margin-bottom: 20px;
+  margin: 20px 8px;
 }
 
 .card {
@@ -1582,23 +1666,24 @@ input {
 
 /*FOR FOOTER*/
 footer {
+    box-sizing: border-box;
     background: #222222;
     height: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: 3% 5%;
 }
 
-.footer-container {
-    width: 90%;
+footer .footer-container {
+    width: 90vw;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    padding-top: 64px;
 }
 
 footer span {
-    font-family: Circular Std, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 18.5px;
@@ -1611,19 +1696,33 @@ footer a {
     text-decoration: none;
 }
 
+footer a:visited {
+    color: #C4C4C4;
+}
+
+.footer-secondary a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+.footer-container-lower a:hover {
+    color: #FFF;
+}
+footer a:active, .footer-container-lower a:active {
+    color: #666;
+}
+
 footer img {
     vertical-align: middle;
     margin-top: -5px;
 }
 
 footer #footer-finisher {
-    font-family: Circular Std, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 18.5px;
     line-height: 23px;
     letter-spacing: 0.02em;
-
     color: #FFFFFF;
 
 }
@@ -1634,7 +1733,7 @@ footer #footer-finisher {
 }
 
 .footer-secondary a {
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -1648,7 +1747,7 @@ footer #footer-finisher {
 .reg-mobile{
     display: none;
     padding: 10px 0;
-    font-family: Google Sans;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1691,7 +1790,7 @@ footer #footer-finisher {
 
     width: 90%;
     margin: 0 auto;
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12.8px;
@@ -1719,7 +1818,7 @@ footer #footer-finisher {
 }
 
 .footer-container-lower .login-container #admin-login {
-    font-family: Google Sans, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 12.8px;
@@ -1806,6 +1905,12 @@ footer #footer-finisher {
 
     .footer-container-lower .login-container #admin-login {
         font-size: 10.8px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .footer-container{
+        width: 100vw;
     }
 }
 
