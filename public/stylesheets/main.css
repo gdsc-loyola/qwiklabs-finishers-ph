@@ -107,7 +107,7 @@ nav span {
     transition: .5s ease-in-out;
 }
 
-#regBtn:hover #regBtn2:hover {
+#regBtn:hover, #regBtn2:hover {
     background-color: #333; 
     color: #fff;
     cursor: pointer;
