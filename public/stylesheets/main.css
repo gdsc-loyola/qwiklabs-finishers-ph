@@ -20,6 +20,9 @@ nav {
     background-color: white;
     padding: 20px 0;
     z-index: 1000;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
 }
 
 nav img {
@@ -106,7 +109,7 @@ nav span {
     cursor: pointer;
 }; 
 
-.burger_button div {
+.burger_button {
     width: 25px;
     height: 3px;
     margin: 3px 0;
@@ -168,22 +171,21 @@ nav span {
         position: relative;
         left: auto;
         right: auto;
-        margin: 0 auto;
 
     }
 
     nav img {
-        width: 128px;
-        height: 24px;
+        width: 124px;
+        height: 20px;
+    }
+
+    img[alt = "PH Icon"]{
+        height: 20px;
+        width: 20px;
     }
 
     nav span{
         font-size: 0.8em;
-    }
-
-    img[alt = "PH Icon"]{
-        height: 10px;
-        width: 10px;
     }
 
     .navigation-secondary{
@@ -202,7 +204,6 @@ nav span {
         box-shadow: 0 4px 6px -6px #222;
 
     }
-
 
     .burger_button{
         display: block;
@@ -522,6 +523,7 @@ nav span {
     margin: 0;
     padding: 0px 0px 5px 0px;
     color: #222222;
+    width: 100vw;
 }
 
 .home-hero-container .text-content-group .link-holder {
@@ -532,7 +534,8 @@ nav span {
 
 .people-collection {
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -658,6 +661,7 @@ nav span {
     display: flex;
     flex-direction: row;
     position: relative;
+    margin-top: 2%;
 }
 
 .register-form {
@@ -670,7 +674,7 @@ nav span {
 
 
 .register-form h1{
-    margin-top: 2%;
+    margin-top: 5%;
     font-family: Google Sans, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -917,12 +921,21 @@ input {
     }
 
 }
+
+@media screen and (max-width: 320px) {
+
+}
+
 /*FOR QUESTS*/
 
 *,
 *::before,
 *::after { 
   box-sizing: border-box;
+}
+
+.quests {
+    min-height: 90vh;
 }
 
 .quest-header-container {
@@ -973,7 +986,7 @@ input {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   list-style: none;
   width: 100%;
@@ -984,7 +997,7 @@ input {
  
 .cards-item {
   width: 23%;
-  margin-bottom: 20px;
+  margin: 20px 8px;
 }
 
 .card {
@@ -1623,7 +1636,7 @@ footer {
 }
 
 .footer-container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -1648,13 +1661,15 @@ footer a:visited {
     color: #C4C4C4;
 }
 
-footer a:hover {
+.footer-secondary a:hover {
     color: #FFF;
     text-decoration: underline;
 }
-
-footer a:active {
-    color: #333;
+.footer-container-lower a:hover {
+    color: #FFF;
+}
+footer a:active, .footer-container-lower a:active {
+    color: #666;
 }
 
 footer img {
@@ -1783,7 +1798,7 @@ footer #footer-finisher {
 @media screen and (max-width: 700px) {
 
     .footer-container {
-        flex-direction: column;
+        
         padding-top: 34px;
         padding-left: 10px;
     }
@@ -1851,6 +1866,12 @@ footer #footer-finisher {
 
     .footer-container-lower .login-container #admin-login {
         font-size: 10.8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        width: 100vw;
     }
 }
 
