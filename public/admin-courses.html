@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta property="og:title" content="Qwiklabs Finishers PH" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests."
+    />
+    <meta
+      name="description"
+      content="Qwiklabs Finishers is a collaborative project between Developer Student Clubs Loyola and GDG Cloud Manila where we showcase Filipinos who have completed successfully finished Qwiklabs Quests."
+    />
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/normalize.css" />
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+    
+    <title>Home | Qwiklabs Finishers PH</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="text-container">
+        <div class="navigation-primary">
+          <a href = index.html>
+            <img src="assets/images/image 1.png" alt = "Qwiklabs logo"/>
+            <span>FINISHERS</span>
+            <img src="assets/images/image 2.png" alt = "PH Icon"/>
+          </a>
+        </div>
+
+        <div class="navigation-secondary">
+          <a href="index.html">Home</a>
+          <a href="quests.html">Quests</a>
+          <a href="finishers.html">Finishers</a>
+          <a href="register.html">
+	          <button id="regBtn">Register</button>
+	        </a>
+        </div>
+
+        <div class="burger_button" onclick="showMenu()">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
+    </nav>
+    <section class='admin-courses'>
+      <div class='admin-courses-container'>
+        <div class='nested-admin-courses-container'>
+          <div class='admin-courses-header'>Admin > <span>Courses</span></div>
+          <div class='course-selection'>
+            <div class='course-element'>
+              <img src='./assets/images/stackdriver_logging.png'>
+              <span>Stackdriver Logging</span>
+            </div>
+            <div class='course-element'>
+              <img src='./assets/images/stackdriver_logging.png'>
+              <span>Stackdriver Logging</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>  
+    <script src="./scripts/firebase.js"></script>
+    <script src="./scripts/quests.js"></script>
+    <script src="./scripts/index.js"></script>
+
+  </body>
+</html>
